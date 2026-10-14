@@ -7,6 +7,7 @@ on:
       subject: {description: "Asunto", required: true}
       body: {description: "Texto del correo", required: true}
       html: {description: "Version HTML (opcional)", required: false, default: ""}
+      inline_image: {description: "Imagen del repositorio para mostrar dentro del correo como cid:diseno (opcional)", required: false, default: ""}
       attachment: {description: "Archivo del repositorio a adjuntar (opcional)", required: false, default: ""}
       attachment_name: {description: "Nombre del adjunto", required: false, default: ""}
 jobs:
@@ -26,7 +27,7 @@ jobs:
           import json
           e = dict(os.environ)
           ev = json.load(open(os.environ["GITHUB_EVENT_PATH"]))["inputs"]
-          for k, v in {"IN_TO": "to", "IN_CC": "cc", "IN_SUBJECT": "subject", "IN_BODY": "body", "IN_HTML": "html", "IN_ATT": "attachment", "IN_ATT_NAME": "attachment_name"}.items():
+          for k, v in {"IN_TO": "to", "IN_CC": "cc", "IN_SUBJECT": "subject", "IN_BODY": "body", "IN_HTML": "html", "IN_IMG": "inline_image", "IN_ATT": "attachment", "IN_ATT_NAME": "attachment_name"}.items():
               e[k] = ev.get(v) or ""
           pw = e.get("GMAIL_APP_PASSWORD", "").replace(" ", "").strip()
           print("Clave configurada:", "si" if pw else "NO (falta el secreto GMAIL_APP_PASSWORD)", "| largo:", len(pw))
@@ -44,6 +45,11 @@ jobs:
           m.set_content(e["IN_BODY"])
           if e.get("IN_HTML"):
               m.add_alternative(e["IN_HTML"], subtype="html")
+              if e.get("IN_IMG"):
+                  ip = e["IN_IMG"]
+                  imt, ist = (mimetypes.guess_type(ip)[0] or "image/jpeg").split("/")
+                  with open(ip, "rb") as f:
+                      m.get_payload()[1].add_related(f.read(), maintype=imt, subtype=ist, cid="<diseno>", filename=os.path.basename(ip))
           if e.get("IN_ATT"):
               p = e["IN_ATT"]
               ctype = mimetypes.guess_type(p)[0] or "application/octet-stream"
