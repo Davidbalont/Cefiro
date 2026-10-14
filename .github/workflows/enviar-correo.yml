@@ -1,0 +1,57 @@
+name: Enviar correo
+on:
+  workflow_dispatch:
+    inputs:
+      to: {description: "Para (separados por coma)", required: true}
+      cc: {description: "Copia (separados por coma)", required: false, default: ""}
+      subject: {description: "Asunto", required: true}
+      body: {description: "Texto del correo", required: true}
+      html: {description: "Version HTML (opcional)", required: false, default: ""}
+      attachment: {description: "Archivo del repositorio a adjuntar (opcional)", required: false, default: ""}
+      attachment_name: {description: "Nombre del adjunto", required: false, default: ""}
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enviar
+        env:
+          GMAIL_USER: davidbalont8@gmail.com
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          IN_TO: ${{ inputs.to }}
+          IN_CC: ${{ inputs.cc }}
+          IN_SUBJECT: ${{ inputs.subject }}
+          IN_BODY: ${{ inputs.body }}
+          IN_HTML: ${{ inputs.html }}
+          IN_ATT: ${{ inputs.attachment }}
+          IN_ATT_NAME: ${{ inputs.attachment_name }}
+        run: |
+          python3 - <<'PY'
+          import os, smtplib, mimetypes
+          from email.message import EmailMessage
+          from email.utils import formataddr, make_msgid
+          e = os.environ
+          to = [x.strip() for x in e["IN_TO"].split(",") if x.strip()]
+          cc = [x.strip() for x in e.get("IN_CC", "").split(",") if x.strip()]
+          m = EmailMessage()
+          m["From"] = formataddr(("David Balderrama", e["GMAIL_USER"]))
+          m["To"] = ", ".join(to)
+          if cc:
+              m["Cc"] = ", ".join(cc)
+          m["Subject"] = e["IN_SUBJECT"]
+          m["Message-ID"] = make_msgid(domain="gmail.com")
+          m.set_content(e["IN_BODY"])
+          if e.get("IN_HTML"):
+              m.add_alternative(e["IN_HTML"], subtype="html")
+          if e.get("IN_ATT"):
+              p = e["IN_ATT"]
+              ctype = mimetypes.guess_type(p)[0] or "application/octet-stream"
+              mt, st = ctype.split("/")
+              with open(p, "rb") as f:
+                  m.add_attachment(f.read(), maintype=mt, subtype=st,
+                                   filename=e.get("IN_ATT_NAME") or os.path.basename(p))
+          with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+              s.login(e["GMAIL_USER"], e["GMAIL_APP_PASSWORD"])
+              s.send_message(m)
+          print("Enviado a", len(to + cc), "destinatario(s)")
+          PY
