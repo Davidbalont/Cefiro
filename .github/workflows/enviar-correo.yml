@@ -31,6 +31,10 @@ jobs:
           from email.message import EmailMessage
           from email.utils import formataddr, make_msgid
           e = os.environ
+          pw = e.get("GMAIL_APP_PASSWORD", "").replace(" ", "").strip()
+          print("Clave configurada:", "si" if pw else "NO (falta el secreto GMAIL_APP_PASSWORD)", "| largo:", len(pw))
+          if not pw:
+              raise SystemExit(1)
           to = [x.strip() for x in e["IN_TO"].split(",") if x.strip()]
           cc = [x.strip() for x in e.get("IN_CC", "").split(",") if x.strip()]
           m = EmailMessage()
@@ -51,7 +55,7 @@ jobs:
                   m.add_attachment(f.read(), maintype=mt, subtype=st,
                                    filename=e.get("IN_ATT_NAME") or os.path.basename(p))
           with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-              s.login(e["GMAIL_USER"], e["GMAIL_APP_PASSWORD"])
+              s.login(e["GMAIL_USER"], pw)
               s.send_message(m)
           print("Enviado a", len(to + cc), "destinatario(s)")
           PY
