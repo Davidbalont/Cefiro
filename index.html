@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Céfiro · Aromatizantes promocionales para auto</title>
-<meta name="description" content="Aromatizantes de cartón para auto con la forma y la marca de tu negocio. Diseño incluido, fabricados en Sonora. Mira el trabajo que hemos hecho para equipos, radios, gasolineras y agencias.">
+<title>Aromatizantes personalizados para auto con tu logo | Céfiro</title>
+<meta name="description" content="Fabricamos aromatizantes promocionales de cartón para auto con la forma y el logo de tu negocio. Diseño gratis, 8 aromas, desde 5,000 piezas. Hechos en Sonora, atendemos el norte de México. Cotiza por WhatsApp.">
+<link rel="canonical" href="https://davidbalont.github.io/Cefiro/">
 <meta property="og:title" content="Céfiro · Aromatizantes promocionales para auto">
 <meta property="og:description" content="Aromatizantes de cartón con la forma y la marca de tu negocio. Mira nuestro trabajo.">
-<meta property="og:image" content="trabajos/xolos-toros.jpg">
+<meta property="og:image" content="https://davidbalont.github.io/Cefiro/trabajos/xolos-toros.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Céfiro", "description": "Aromatizantes promocionales de cartón para auto, personalizados con la forma y el logo de cada negocio.", "url": "https://davidbalont.github.io/Cefiro/", "image": "https://davidbalont.github.io/Cefiro/trabajos/xolos-toros.jpg", "logo": "https://davidbalont.github.io/Cefiro/logo.png", "telephone": "+526444624188", "email": "davidbalont8@gmail.com", "address": {"@type": "PostalAddress", "addressRegion": "Sonora", "addressCountry": "MX"}, "areaServed": ["Sonora", "Nuevo León", "Baja California", "Sinaloa", "Chihuahua", "México"], "priceRange": "$9.40 - $10.90 MXN por pieza + IVA"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $9.40 por pieza + IVA en pedidos de 20,000 piezas, $9.90 en 10,000 y $10.50 en 5,000 (diseño a 2 tintas). A 3 tintas: $9.90, $10.40 y $10.90. Ya incluye diseño, empaque individual y envío a Monterrey."}}, {"@type": "Question", "name": "¿Cuál es el pedido mínimo?", "acceptedAnswer": {"@type": "Answer", "text": "5,000 piezas. Entre más piezas, menor el precio por pieza. Para otras cantidades hacemos cotización especial."}}, {"@type": "Question", "name": "¿Cuánto tarda mi pedido?", "acceptedAnswer": {"@type": "Answer", "text": "De 15 a 20 días de producción a partir del anticipo, más unos 3 días hábiles de envío por paquetería. Para entregar en diciembre conviene confirmar a más tardar a mediados de noviembre."}}, {"@type": "Question", "name": "¿Tiene costo el diseño?", "acceptedAnswer": {"@type": "Answer", "text": "No. El diseño va incluido, con hasta 2 rondas de ajustes. Nada se imprime hasta que apruebes el diseño final."}}, {"@type": "Question", "name": "¿Puede tener la forma de mi logo?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Troquelamos la pieza a la silueta de tu logo, tu mascota, un auto o la forma que quieras, en tamaños de entre 7 y 10 cm, impresa por ambos lados."}}, {"@type": "Question", "name": "¿Qué aromas tienen?", "acceptedAnswer": {"@type": "Answer", "text": "Chicle, fresa, vainilla, coco, manzana-canela, New Car, Blue Ice y Gold."}}, {"@type": "Question", "name": "¿Puedo ver una muestra antes de pedir?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Te mostramos piezas físicas para que conozcas el cartón, la impresión y el aroma."}}, {"@type": "Question", "name": "¿Cómo se paga?", "acceptedAnswer": {"@type": "Answer", "text": "50% de anticipo al confirmar el pedido, por transferencia o SPEI. Los precios son más IVA."}}, {"@type": "Question", "name": "¿Hasta dónde envían?", "acceptedAnswer": {"@type": "Answer", "text": "Fabricamos en Sonora y atendemos en persona en Monterrey. El envío a Monterrey va incluido; a otras ciudades lo cotizamos aparte."}}]}]</script>
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,7 +49,7 @@ nav .btn{padding:9px 18px;font-size:14px}
 .hero .acciones{display:flex;gap:12px;flex-wrap:wrap}
 .hero figure{margin:0;background:#fff;border-radius:24px;padding:22px;box-shadow:0 18px 50px rgba(31,58,51,.12)}
 .hero figcaption{font-size:13px;color:var(--suave);text-align:center;margin-top:10px}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:36px}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:36px}.hero figure{max-width:360px;margin:0 auto;padding:14px}}
 
 /* Cifras */
 .datos{background:var(--verde);color:var(--crema)}
@@ -72,6 +76,7 @@ section{padding:80px 0}
 .pieza h3{font-family:Montserrat,sans-serif;font-size:15px;font-weight:600;color:var(--verde)}
 .pieza small{color:var(--oro);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
 .pieza[hidden]{display:none}
+@media(max-width:560px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pieza .img{padding:8px}.pieza .info{padding:8px 10px 12px}.pieza h3{font-size:13px}.pieza small{font-size:10px}}
 
 /* Cómo trabajamos */
 .proceso{background:var(--crema2)}
@@ -109,6 +114,64 @@ section{padding:80px 0}
 .contacto .firma{margin-top:26px;font-size:14px;opacity:.75}
 footer{background:#172C26;color:rgba(246,243,236,.7);font-size:13px;padding:22px 0;text-align:center}
 
+/* Clientes */
+.clientes{border-bottom:1px solid var(--linea);padding:22px 0}
+.clientes .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;justify-content:center}
+.clientes small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.clientes span{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--verde);opacity:.8}
+.garantia{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:var(--suave)}
+.garantia span::before{content:"✓ ";color:var(--oro);font-weight:700}
+
+/* Cotizador */
+.cotizar{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.cotizar .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.cotizar ul{padding-left:18px;color:var(--suave)}
+.cotizar li{margin:6px 0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--crema);border:1px solid var(--linea);border-radius:20px;padding:24px}
+form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--verde);min-width:0}
+form .full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:15px;font-weight:400;color:var(--texto);background:#fff;border:1.5px solid var(--linea);border-radius:10px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--oro);outline-offset:1px;border-color:var(--oro)}
+form .botones{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+form .botones button{font:inherit;cursor:pointer;border:0}
+form .nota{grid-column:1/-1;font-size:13px;color:var(--suave);margin:0}
+@media(max-width:860px){.cotizar .wrap{grid-template-columns:1fr}}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+
+/* Precios */
+.tintas{display:inline-flex;background:#fff;border:1px solid var(--linea);border-radius:999px;padding:4px;margin-bottom:22px}
+.tintas button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--verde);padding:8px 16px;border-radius:999px;cursor:pointer}
+.tintas button[aria-pressed="true"]{background:var(--verde);color:var(--crema)}
+.precios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:4px;position:relative}
+.plan.dest{border:2px solid var(--verde);box-shadow:0 14px 34px rgba(31,58,51,.12)}
+.plan .cant{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-top:4px}
+.plan .precio{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:var(--verde);line-height:1;font-variant-numeric:tabular-nums;margin-top:6px}
+.plan .precio sup{font-size:.45em;vertical-align:.9em;margin-left:2px}
+.plan .precio .s{font-size:.55em;vertical-align:.6em;margin-right:2px}
+.plan .iva{font-size:13px;color:var(--suave)}
+.plan .ahorro{font-size:14px;font-weight:600;color:#2F7A55;min-height:1.5em;margin-top:6px}
+.plan .uso{font-size:15px;color:var(--texto);border-top:1px solid var(--crema2);padding-top:10px;margin-top:6px}
+.plan .tag{position:absolute;top:-12px;left:24px;background:var(--verde);color:var(--crema);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.plan .tag.oro{background:var(--oro)}
+.incluye{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px;max-width:860px}
+.incluye li{font-size:15px;color:var(--texto)}
+.incluye li::before{content:"✓ ";color:var(--oro);font-weight:700}
+.letra{font-size:13px;color:var(--suave);margin:18px 0 0;max-width:780px}
+@media(max-width:860px){.precios{grid-template-columns:1fr;gap:26px}.incluye{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.incluye{grid-template-columns:1fr}}
+
+/* Preguntas */
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--linea);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--verde);font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--oro)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:10px 0 0;color:var(--suave)}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
 /* Visor */
 dialog{border:0;border-radius:20px;padding:0;max-width:min(960px,94vw);max-height:92vh;background:#fff}
 dialog::backdrop{background:rgba(23,44,38,.75)}
@@ -131,7 +194,9 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
       <a href="#trabajos">Trabajos</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#producto">El producto</a>
-      <a class="btn" href="#contacto">Cotizar</a>
+      <a href="#precios">Precios</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn" href="#cotizar">Cotizar</a>
     </nav>
   </div>
 </header>
@@ -140,13 +205,14 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
 <section class="hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Aromatizantes promocionales</div>
+      <div class="eyebrow">Aromatizantes personalizados para auto</div>
       <h1>Tu marca, colgada en el auto de tus clientes todos los días.</h1>
       <p>Hacemos aromatizantes de cartón con la forma, los colores y el logo de tu negocio. Nosotros diseñamos, fabricamos en Sonora y te lo entregamos listo para regalar.</p>
       <div class="acciones">
-        <a class="btn" href="#trabajos">Ver nuestro trabajo</a>
-        <a class="btn sec" href="https://wa.me/526444624188?text=Hola%2C%20me%20interesan%20aromatizantes%20promocionales%20para%20mi%20negocio" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        <a class="btn" href="#cotizar">Pide tu diseño gratis</a>
+        <a class="btn sec" href="#trabajos">Ver trabajos realizados</a>
       </div>
+      <div class="garantia"><span>Nada se imprime hasta que apruebes</span><span>Ves muestras físicas antes de decidir</span><span>Diseño sin costo</span></div>
     </div>
     <figure>
       <img src="trabajos/xolos-toros.jpg" alt="Aromatizantes de Xolos de Tijuana y Toros de Tijuana con la marca Burbuaroma" width="1000" height="842">
@@ -155,11 +221,16 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
   </div>
 </section>
 
+<div class="clientes" aria-label="Algunos clientes">
+  <div class="wrap"><small>Ya confían en nosotros</small><span>Xolos</span><span>Toros</span><span>Yaquis</span><span>EXA FM</span><span>La Mejor</span><span>Honda Premium</span><span>US Fuel</span><span>Kendall</span></div>
+</div>
+
 <div class="datos">
   <div class="wrap">
-    <div><b>Diseño incluido</b><span>Con hasta 2 rondas de ajustes</span></div>
+    <div><b>Desde $9.40 <small style="font-size:.5em;font-family:Montserrat,sans-serif">+ IVA</small></b><span>Por pieza, con diseño, empaque y envío</span></div>
+    <div><b>Diseño gratis</b><span>Con hasta 2 rondas de ajustes</span></div>
     <div><b>Cualquier forma</b><span>Troquelado a la silueta de tu diseño</span></div>
-    <div><b>8 aromas</b><span>Para elegir el que va con tu marca</span></div>
+    
     <div><b>15 a 20 días</b><span>De producción a partir del anticipo</span></div>
   </div>
 </div>
@@ -210,7 +281,7 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
         <li><b>Cartón aromatizado, impreso por ambos lados</b><span>En el frente tu logo; en el reverso tus teléfonos, dirección, redes o una promoción.</span></li>
         <li><b>Con la forma que quieras</b><span>Círculo, rectángulo, la silueta de tu logo, de tu mascota o de un auto. Tamaños de entre 7 y 10 cm.</span></li>
         <li><b>Empaque individual sellado</b><span>Conserva el aroma hasta que tu cliente lo abre.</span></li>
-        <li><b>Pedidos desde 5,000 piezas</b><span>Entre más piezas, menor el precio por pieza. Pídenos tu cotización.</span></li>
+        <li><b>Pedidos desde 5,000 piezas</b><span>Desde $9.40 por pieza + IVA. <a href="#precios">Ver precios</a>.</span></li>
         <li><b>Aromas disponibles</b>
           <div class="aromas"><span>Chicle</span><span>Fresa</span><span>Vainilla</span><span>Coco</span><span>Manzana-canela</span><span>New Car</span><span>Blue Ice</span><span>Gold</span></div>
         </li>
@@ -226,6 +297,91 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
         <div><b>Autolavados y llanteras</b><span>Tu teléfono colgado en el auto hasta el próximo servicio.</span></div>
         <div><b>Eventos y aniversarios</b><span>Una edición especial para celebrar con tus clientes.</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="precios" class="proceso">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Precios</div>
+      <h2>Menos de $11 por cada cliente que lleva tu marca</h2>
+      <p>Precio por pieza, ya con diseño, troquel, aroma, empaque y envío a Monterrey. Entre más piezas, más ahorras.</p>
+    </div>
+    <div class="tintas" role="group" aria-label="Número de tintas del diseño">
+      <button type="button" data-t="2" aria-pressed="true">Diseño a 2 tintas</button>
+      <button type="button" data-t="3" aria-pressed="false">Diseño a 3 tintas</button>
+    </div>
+    <div class="precios">
+      <div class="plan"><span class="cant">5,000 piezas</span><span class="precio" data-p2="10.50" data-p3="10.90"></span><span class="iva">por pieza + IVA</span><span class="ahorro">&nbsp;</span><span class="uso">Para una promoción o un evento.</span></div>
+      <div class="plan dest"><span class="tag">Recomendado</span><span class="cant">10,000 piezas</span><span class="precio" data-p2="9.90" data-p3="10.40"></span><span class="iva">por pieza + IVA</span><span class="ahorro"></span><span class="uso">Para una temporada o varias sucursales.</span></div>
+      <div class="plan"><span class="tag oro">Mejor precio</span><span class="cant">20,000 piezas</span><span class="precio" data-p2="9.40" data-p3="9.90"></span><span class="iva">por pieza + IVA</span><span class="ahorro"></span><span class="uso">Para una campaña de todo el año.</span></div>
+    </div>
+    <ul class="incluye">
+      <li>Diseño personalizado con 2 rondas de ajustes</li>
+      <li>Troquel a la forma de tu logo</li>
+      <li>Impresión por ambos lados</li>
+      <li>Aroma a elegir entre 8</li>
+      <li>Empaque individual sellado</li>
+      <li>Envío a Monterrey</li>
+    </ul>
+    <p class="letra">Precios en pesos mexicanos, más IVA. Diseños de 4 o más tintas, otras cantidades o envíos fuera de Monterrey: cotización especial. Precios sujetos a confirmación del diseño final.</p>
+  </div>
+</section>
+
+<section id="cotizar" class="cotizar">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Cotiza en un minuto</div>
+      <h2>Cuéntanos qué necesitas y te mandamos tu diseño</h2>
+      <p>Llena estos datos y se abre WhatsApp con el mensaje listo. Ahí mismo nos mandas tu logo y te regresamos la cotización con una propuesta de diseño, sin costo.</p>
+      <ul>
+        <li>No necesitas tener el diseño, nosotros lo hacemos.</li>
+        <li>Si no tienes el logo en buena calidad, una foto nos sirve para empezar.</li>
+        <li>Te mostramos piezas físicas antes de que decidas.</li>
+      </ul>
+    </div>
+    <form id="form-cotizar" novalidate>
+      <label>Tu nombre<input id="c-nombre" name="nombre" autocomplete="name" required></label>
+      <label>Empresa o marca<input id="c-empresa" name="empresa" autocomplete="organization" required></label>
+      <label>Giro
+        <select id="c-giro" name="giro">
+          <option>Agencia de autos</option><option>Equipo deportivo</option><option>Radio o medio</option><option>Gasolinera</option><option>Autolavado</option><option>Llantera o taller</option><option>Refaccionaria</option><option>Otro</option>
+        </select>
+      </label>
+      <label>Cantidad aproximada
+        <select id="c-cantidad" name="cantidad">
+          <option>5,000 piezas</option><option>10,000 piezas</option><option>20,000 piezas o más</option><option>Todavía no sé</option>
+        </select>
+      </label>
+      <label>Ciudad<input id="c-ciudad" name="ciudad" autocomplete="address-level2"></label>
+      <label>¿Para cuándo lo necesitas?<input id="c-fecha" name="fecha" placeholder="Ej. principios de diciembre"></label>
+      <label class="full">Algo más que debamos saber (opcional)<textarea id="c-notas" name="notas" rows="3" placeholder="Forma que te imaginas, aroma, si es para un evento…"></textarea></label>
+      <div class="botones">
+        <button class="btn" type="submit">Enviar por WhatsApp</button>
+        <button class="btn sec" type="button" id="c-correo">Enviar por correo</button>
+      </div>
+      <p class="nota" id="c-nota">Al enviar se abre WhatsApp con tu mensaje. Solo falta adjuntar tu logo.</p>
+    </form>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Cuánto cuesta?</summary><p>Desde $9.40 por pieza + IVA en pedidos de 20,000 piezas, $9.90 en 10,000 y $10.50 en 5,000 (diseño a 2 tintas). A 3 tintas: $9.90, $10.40 y $10.90. Ya incluye diseño, empaque individual y envío a Monterrey.</p></details>
+      <details><summary>¿Cuál es el pedido mínimo?</summary><p>5,000 piezas. Entre más piezas, menor el precio por pieza. Para otras cantidades hacemos cotización especial.</p></details>
+      <details><summary>¿Cuánto tarda mi pedido?</summary><p>De 15 a 20 días de producción a partir del anticipo, más unos 3 días hábiles de envío por paquetería. Para entregar en diciembre conviene confirmar a más tardar a mediados de noviembre.</p></details>
+      <details><summary>¿Tiene costo el diseño?</summary><p>No. El diseño va incluido, con hasta 2 rondas de ajustes. Nada se imprime hasta que apruebes el diseño final.</p></details>
+      <details><summary>¿Puede tener la forma de mi logo?</summary><p>Sí. Troquelamos la pieza a la silueta de tu logo, tu mascota, un auto o la forma que quieras, en tamaños de entre 7 y 10 cm, impresa por ambos lados.</p></details>
+      <details><summary>¿Qué aromas tienen?</summary><p>Chicle, fresa, vainilla, coco, manzana-canela, New Car, Blue Ice y Gold.</p></details>
+      <details><summary>¿Puedo ver una muestra antes de pedir?</summary><p>Sí. Te mostramos piezas físicas para que conozcas el cartón, la impresión y el aroma.</p></details>
+      <details><summary>¿Cómo se paga?</summary><p>50% de anticipo al confirmar el pedido, por transferencia o SPEI. Los precios son más IVA.</p></details>
+      <details><summary>¿Hasta dónde envían?</summary><p>Fabricamos en Sonora y atendemos en persona en Monterrey. El envío a Monterrey va incluido; a otras ciudades lo cotizamos aparte.</p></details>
     </div>
   </div>
 </section>
@@ -295,6 +451,48 @@ g.addEventListener("click", e => {
   document.getElementById("visor-t").textContent = x.t;
   document.getElementById("visor-d").textContent = x.d;
   v.showModal();
+});
+const planes = document.querySelectorAll(".plan");
+function precios(t) {
+  const base = parseFloat(planes[0].querySelector(".precio").dataset["p" + t]);
+  planes.forEach((pl, i) => {
+    const v = parseFloat(pl.querySelector(".precio").dataset["p" + t]);
+    const [e, c] = v.toFixed(2).split(".");
+    pl.querySelector(".precio").innerHTML = `<span class="s">$</span>${e}<sup>.${c}</sup>`;
+    const piezas = [5000, 10000, 20000][i];
+    const ah = (base - v) * piezas;
+    if (i) pl.querySelector(".ahorro").textContent = `Ahorras $${Math.round(ah).toLocaleString("es-MX")} (${Math.round((base - v) / base * 100)}%)`;
+  });
+  document.querySelectorAll(".tintas button").forEach(b => b.setAttribute("aria-pressed", b.dataset.t === t));
+}
+document.querySelectorAll(".tintas button").forEach(b => b.addEventListener("click", () => precios(b.dataset.t)));
+precios("2");
+const f = document.getElementById("form-cotizar");
+function mensaje() {
+  const v = id => document.getElementById(id).value.trim();
+  const l = ["Hola, quiero cotizar aromatizantes promocionales."];
+  if (v("c-nombre")) l.push("Nombre: " + v("c-nombre"));
+  if (v("c-empresa")) l.push("Empresa: " + v("c-empresa"));
+  l.push("Giro: " + v("c-giro"), "Cantidad: " + v("c-cantidad"));
+  if (v("c-ciudad")) l.push("Ciudad: " + v("c-ciudad"));
+  if (v("c-fecha")) l.push("Para cuándo: " + v("c-fecha"));
+  if (v("c-notas")) l.push("Notas: " + v("c-notas"));
+  return l.join("\n");
+}
+function valido() {
+  const falta = ["c-nombre","c-empresa"].filter(id => !document.getElementById(id).value.trim());
+  const nota = document.getElementById("c-nota");
+  if (falta.length) { nota.textContent = "Escribe tu nombre y el de tu empresa para enviar."; document.getElementById(falta[0]).focus(); return false; }
+  nota.textContent = "Al enviar se abre WhatsApp con tu mensaje. Solo falta adjuntar tu logo.";
+  return true;
+}
+f.addEventListener("submit", e => {
+  e.preventDefault(); if (!valido()) return;
+  window.open("https://wa.me/526444624188?text=" + encodeURIComponent(mensaje()), "_blank", "noopener");
+});
+document.getElementById("c-correo").addEventListener("click", () => {
+  if (!valido()) return;
+  location.href = "mailto:davidbalont8@gmail.com?subject=" + encodeURIComponent("Cotización de aromatizantes promocionales") + "&body=" + encodeURIComponent(mensaje());
 });
 document.getElementById("visor-x").onclick = () => v.close();
 v.addEventListener("click", e => { if (e.target === v) v.close(); });
