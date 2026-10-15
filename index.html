@@ -54,7 +54,7 @@ nav .btn{padding:9px 18px;font-size:14px}
 /* Cifras */
 .datos{background:var(--verde);color:var(--crema)}
 .datos .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px}
-.datos b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:#E2C58E;line-height:1.1}
+.datos b{display:block;font-variant-numeric:lining-nums;font-family:'Cormorant Garamond',serif;font-size:30px;color:#E2C58E;line-height:1.1}
 .datos span{font-size:14px;opacity:.9}
 @media(max-width:760px){.datos .wrap{grid-template-columns:repeat(2,1fr)}}
 
@@ -146,14 +146,17 @@ form .nota{grid-column:1/-1;font-size:13px;color:var(--suave);margin:0}
 .plan{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:4px;position:relative}
 .plan.dest{border:2px solid var(--verde);box-shadow:0 14px 34px rgba(31,58,51,.12)}
 .plan .cant{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-top:4px}
-.plan .precio{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:var(--verde);line-height:1;font-variant-numeric:tabular-nums;margin-top:6px}
+.plan .precio{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:var(--verde);line-height:1;font-variant-numeric:lining-nums tabular-nums;margin-top:6px}
 .plan .precio sup{font-size:.45em;vertical-align:.9em;margin-left:2px}
-.plan .precio .s{font-size:.55em;vertical-align:.6em;margin-right:2px}
+
 .plan .iva{font-size:13px;color:var(--suave)}
 .plan .ahorro{font-size:14px;font-weight:600;color:#2F7A55;min-height:1.5em;margin-top:6px}
 .plan .uso{font-size:15px;color:var(--texto);border-top:1px solid var(--crema2);padding-top:10px;margin-top:6px}
 .plan .tag{position:absolute;top:-12px;left:24px;background:var(--verde);color:var(--crema);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
-.plan .tag.oro{background:var(--oro)}
+.plan .tag.suave{background:var(--crema2);color:var(--verde)}
+.plan .coniva{font-size:12.5px;color:var(--suave);font-variant-numeric:tabular-nums}
+.garantia-precio{margin:20px 0 0;font-weight:600;color:var(--verde);font-size:15px}
+@media(max-width:860px){.plan.dest{order:-1}}
 .incluye{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px;max-width:860px}
 .incluye li{font-size:15px;color:var(--texto)}
 .incluye li::before{content:"✓ ";color:var(--oro);font-weight:700}
@@ -305,17 +308,17 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
   <div class="wrap">
     <div class="titulo">
       <div class="eyebrow">Precios</div>
-      <h2>Menos de $11 por cada cliente que lleva tu marca</h2>
-      <p>Precio por pieza, ya con diseño, troquel, aroma, empaque y envío a Monterrey. Entre más piezas, más ahorras.</p>
+      <h2>Tu marca en el auto de cada cliente desde $9.40</h2>
+      <p>El precio que ves ya incluye diseño, troquel, aroma, empaque y envío a Monterrey. Entre más piezas, menos pagas por cada una.</p>
     </div>
     <div class="tintas" role="group" aria-label="Número de tintas del diseño">
       <button type="button" data-t="2" aria-pressed="true">Diseño a 2 tintas</button>
       <button type="button" data-t="3" aria-pressed="false">Diseño a 3 tintas</button>
     </div>
     <div class="precios">
-      <div class="plan"><span class="cant">5,000 piezas</span><span class="precio" data-p2="10.50" data-p3="10.90"></span><span class="iva">por pieza + IVA</span><span class="ahorro">&nbsp;</span><span class="uso">Para una promoción o un evento.</span></div>
-      <div class="plan dest"><span class="tag">Recomendado</span><span class="cant">10,000 piezas</span><span class="precio" data-p2="9.90" data-p3="10.40"></span><span class="iva">por pieza + IVA</span><span class="ahorro"></span><span class="uso">Para una temporada o varias sucursales.</span></div>
-      <div class="plan"><span class="tag oro">Mejor precio</span><span class="cant">20,000 piezas</span><span class="precio" data-p2="9.40" data-p3="9.90"></span><span class="iva">por pieza + IVA</span><span class="ahorro"></span><span class="uso">Para una campaña de todo el año.</span></div>
+      <div class="plan"><span class="cant">5,000 piezas</span><span class="precio" data-p2="10.50" data-p3="10.90"></span><span class="iva">MXN por pieza + IVA</span><span class="ahorro">&nbsp;</span><span class="coniva"></span><span class="uso">Para una promoción o un evento.</span></div>
+      <div class="plan dest"><span class="tag">Recomendado</span><span class="cant">10,000 piezas</span><span class="precio" data-p2="9.90" data-p3="10.40"></span><span class="iva">MXN por pieza + IVA</span><span class="ahorro">&nbsp;</span><span class="coniva"></span><span class="uso">Para una temporada o varias sucursales.</span></div>
+      <div class="plan"><span class="tag suave">Mayor ahorro</span><span class="cant">20,000 piezas</span><span class="precio" data-p2="9.40" data-p3="9.90"></span><span class="iva">MXN por pieza + IVA</span><span class="ahorro">&nbsp;</span><span class="coniva"></span><span class="uso">Para una campaña de todo el año.</span></div>
     </div>
     <ul class="incluye">
       <li>Diseño personalizado con 2 rondas de ajustes</li>
@@ -325,7 +328,8 @@ dialog button{font:inherit;border:0;background:var(--crema2);color:var(--verde);
       <li>Empaque individual sellado</li>
       <li>Envío a Monterrey</li>
     </ul>
-    <p class="letra">Precios en pesos mexicanos, más IVA. Diseños de 4 o más tintas, otras cantidades o envíos fuera de Monterrey: cotización especial. Precios sujetos a confirmación del diseño final.</p>
+    <p class="garantia-precio">Nada se produce hasta que apruebas tu diseño. Arrancas con 50% de anticipo.</p>
+    <p class="letra">Precios para empresas, en pesos mexicanos, más IVA (16%); el precio con IVA aparece debajo de cada uno. Diseños de 4 o más tintas, otras cantidades o envíos fuera de Monterrey: cotización especial. Precios sujetos a confirmación del diseño final.</p>
   </div>
 </section>
 
@@ -453,15 +457,17 @@ g.addEventListener("click", e => {
   v.showModal();
 });
 const planes = document.querySelectorAll(".plan");
+const mx = n => "$" + n.toLocaleString("es-MX", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const mil = n => "$" + (Math.round(n / 100) / 10).toLocaleString("es-MX") + " mil";
 function precios(t) {
   const base = parseFloat(planes[0].querySelector(".precio").dataset["p" + t]);
   planes.forEach((pl, i) => {
     const v = parseFloat(pl.querySelector(".precio").dataset["p" + t]);
     const [e, c] = v.toFixed(2).split(".");
-    pl.querySelector(".precio").innerHTML = `<span class="s">$</span>${e}<sup>.${c}</sup>`;
     const piezas = [5000, 10000, 20000][i];
-    const ah = (base - v) * piezas;
-    if (i) pl.querySelector(".ahorro").textContent = `Ahorras $${Math.round(ah).toLocaleString("es-MX")} (${Math.round((base - v) / base * 100)}%)`;
+    pl.querySelector(".precio").innerHTML = `${e}<sup>.${c}</sup>`;
+    pl.querySelector(".ahorro").textContent = i ? `${Math.round((base - v) / base * 100)}% menos por pieza · ahorras ${mil((base - v) * piezas)}` : "\u00a0";
+    pl.querySelector(".coniva").textContent = `Con IVA: ${mx(v * 1.16)} por pieza · pedido de ${mil(v * piezas * 1.16)}`;
   });
   document.querySelectorAll(".tintas button").forEach(b => b.setAttribute("aria-pressed", b.dataset.t === t));
 }
