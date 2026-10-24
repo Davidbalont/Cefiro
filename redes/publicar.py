@@ -20,8 +20,15 @@ PUBLICADAS = os.path.join(AQUI, "publicadas.json")
 SONORA = timezone(timedelta(hours=-7))
 
 
+class ErrorMeta(SystemExit):
+    pass
+
+
+TOKEN = {"valor": os.environ.get("META_PAGE_TOKEN", "")}
+
+
 def graph(metodo, ruta, **params):
-    params["access_token"] = os.environ["META_PAGE_TOKEN"]
+    params.setdefault("access_token", TOKEN["valor"])
     datos = urllib.parse.urlencode(params).encode()
     url = f"{API}/{ruta}"
     if metodo == "GET":
@@ -33,7 +40,7 @@ def graph(metodo, ruta, **params):
             return json.load(r)
     except urllib.error.HTTPError as e:
         cuerpo = e.read().decode(errors="replace")
-        raise SystemExit(f"Error de Meta en {ruta}: {e.code} {cuerpo}")
+        raise ErrorMeta(f"Error de Meta en {ruta}: {e.code} {cuerpo}")
 
 
 def url_imagen(ruta):
@@ -59,6 +66,20 @@ def publicar_instagram(ig_id, imagen, texto):
     return graph("POST", f"{ig_id}/media_publish", creation_id=contenedor)["id"]
 
 
+def buscar_pagina():
+    """Acepta el token de la pagina o el de un usuario del sistema que la administra."""
+    campos = "id,name,instagram_business_account"
+    try:
+        paginas = graph("GET", "me/accounts", fields=campos + ",access_token").get("data") or []
+    except ErrorMeta:
+        paginas = []  # el token ya es de la pagina
+    if not paginas:
+        return graph("GET", "me", fields=campos)
+    pagina = next((x for x in paginas if "firo" in x.get("name", "").lower()), paginas[0])
+    TOKEN["valor"] = pagina.pop("access_token")
+    return pagina
+
+
 def main():
     prueba = os.environ.get("PRUEBA", "").lower() == "true"
     calendario = json.load(open(CALENDARIO, encoding="utf-8"))["publicaciones"]
@@ -74,7 +95,7 @@ def main():
         return
     p = sorted(pendientes, key=lambda x: x["fecha"])[0]
 
-    pagina = graph("GET", "me", fields="id,name,instagram_business_account")
+    pagina = buscar_pagina()
     pagina_id = pagina["id"]
     ig_id = (pagina.get("instagram_business_account") or {}).get("id")
     print(f"Pagina: {pagina.get('name')} | Instagram conectado: {'si' if ig_id else 'NO'}")
