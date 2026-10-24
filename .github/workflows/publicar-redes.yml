@@ -1,0 +1,32 @@
+name: Publicar en redes
+on:
+  schedule:
+    - cron: "0 2 * * *" # 7:00 pm en Sonora (UTC-7)
+  workflow_dispatch:
+    inputs:
+      prueba:
+        description: "Solo revisar la conexion, sin publicar"
+        type: boolean
+        default: true
+permissions:
+  contents: write
+concurrency: publicar-redes
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar la siguiente publicacion pendiente
+        env:
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          PRUEBA: ${{ github.event_name == 'workflow_dispatch' && inputs.prueba }}
+        run: |
+          if [ -z "$META_PAGE_TOKEN" ]; then echo "Falta el secreto META_PAGE_TOKEN"; exit 1; fi
+          python3 redes/publicar.py
+      - name: Guardar registro de publicadas
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898315+github-actions[bot]@users.noreply.github.com"
+          git add redes/publicadas.json
+          git diff --cached --quiet || (git commit -m "Registro de publicaciones en redes" && git push)
