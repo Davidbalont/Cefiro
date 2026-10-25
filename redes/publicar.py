@@ -90,10 +90,15 @@ def main():
         return all(red in publicadas.get(pid, {}) for red in ("facebook", "instagram"))
 
     pendientes = [p for p in calendario if p["fecha"] <= hoy and not completa(p["id"])]
-    if not pendientes:
+    if not pendientes and not prueba:
         print(f"Nada que publicar hoy ({hoy}).")
         return
-    p = sorted(pendientes, key=lambda x: x["fecha"])[0]
+    # En modo prueba se revisa la conexion aunque hoy no toque publicar.
+    siguientes = pendientes or [p for p in calendario if not completa(p["id"])]
+    if not siguientes:
+        print("No quedan publicaciones en el calendario.")
+        return
+    p = sorted(siguientes, key=lambda x: x["fecha"])[0]
 
     pagina = buscar_pagina()
     pagina_id = pagina["id"]
