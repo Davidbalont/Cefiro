@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Céfiro Digital · Plantillas y kits para tu negocio</title>
+<meta name="description" content="Plantillas de Excel, kits de publicaciones editables y guías para pymes de México, Estados Unidos y Latinoamérica. Cotizador, inventario, calendario de contenido 2027 y más. Descarga inmediata.">
+<link rel="canonical" href="https://davidbalont.github.io/Cefiro/digital.html">
+<meta property="og:title" content="Céfiro Digital · Plantillas y kits para tu negocio">
+<meta property="og:description" content="Cotizador, inventario, calendario 2027, kits para redes y guías. Descarga inmediata.">
+<meta property="og:image" content="https://davidbalont.github.io/Cefiro/digital/cotizador.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--crema:#F6F3EC;--crema2:#EDE7DA;--verde:#1F3A33;--verde2:#2C5047;--oro:#B48A45;--texto:#24312D;--suave:#5E6B66;--linea:#DDD6C7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:Montserrat,system-ui,sans-serif;line-height:1.6;font-size:16px}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-variant-numeric:lining-nums;font-family:'Cormorant Garamond',Georgia,serif;color:var(--verde);font-weight:700;line-height:1.1;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--verde);color:var(--crema);text-decoration:none;font:inherit;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--verde2)}
+.btn.sec{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+.btn.sec:hover{background:var(--crema2)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+header{position:sticky;top:0;z-index:20;background:rgba(246,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+header img{height:46px;width:auto}
+nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500}
+nav a{text-decoration:none}
+nav a:not(.btn):hover{color:var(--oro)}
+nav .btn{padding:9px 18px;font-size:14px}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,60px);margin:14px 0 16px}
+.hero p{font-size:18px;color:var(--suave);max-width:520px;margin:0 0 26px}
+.hero .muestras{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:32px}}
+
+.datos{background:var(--verde);color:var(--crema)}
+.datos .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
+.datos b{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;color:#E2C58E;line-height:1.1}
+.datos span{font-size:14px;opacity:.9}
+@media(max-width:760px){.datos .wrap{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:72px 0}
+.titulo{max-width:640px;margin-bottom:30px}
+.titulo h2{font-size:clamp(30px,4.5vw,44px);margin:10px 0 12px}
+.titulo p{color:var(--suave);margin:0;font-size:17px}
+
+.paquetes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:980px){.paquetes{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.paquetes{grid-template-columns:1fr}}
+.paquete{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px;display:flex;flex-direction:column;position:relative}
+.paquete.destacado{border:2px solid var(--oro)}
+.paquete .sello{position:absolute;top:-12px;left:22px;background:var(--oro);color:#fff;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.paquete h3{font-size:28px}
+.paquete .para{color:var(--suave);font-size:14px;margin:4px 0 14px;min-height:44px}
+.paquete .precio{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--verde);line-height:1}
+.paquete .unidad{font-size:13px;color:var(--suave);margin:4px 0 14px}
+.paquete ul{list-style:none;padding:0;margin:0 0 18px;font-size:14px;flex:1}
+.paquete li{padding:4px 0 4px 22px;position:relative}
+.paquete li:before{content:"";position:absolute;left:0;top:11px;width:12px;height:7px;border-left:2px solid var(--oro);border-bottom:2px solid var(--oro);transform:rotate(-45deg)}
+.contador{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--linea);border-radius:999px;padding:4px}
+.contador button{width:38px;height:38px;border-radius:50%;border:0;background:var(--crema2);color:var(--verde);font-size:20px;font-weight:600;cursor:pointer}
+.contador button:hover{background:var(--linea)}
+.contador output{font-weight:600;min-width:30px;text-align:center}
+
+.aromas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:760px){.aromas{grid-template-columns:repeat(2,1fr)}}
+.aroma{background:#fff;border:1.5px solid var(--linea);border-radius:18px;padding:16px;text-align:center;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,transform .2s}
+.aroma:hover{transform:translateY(-2px)}
+.aroma[aria-pressed="true"]{border-color:var(--verde);box-shadow:0 0 0 2px var(--verde) inset}
+.aroma svg{width:96px;margin:0 auto 10px}
+.aroma b{display:block;font-size:15px;color:var(--verde)}
+.aroma small{color:var(--suave);font-size:13px}
+
+.pedido{background:#fff;border:1px solid var(--linea);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:860px){.pedido{grid-template-columns:1fr;padding:20px}}
+.resumen h3{font-size:26px;margin-bottom:12px}
+.resumen .linea{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--crema2);font-size:15px}
+.resumen .total{font-weight:600;font-size:18px;border-bottom:0;color:var(--verde)}
+.resumen .vacio{color:var(--suave);font-size:15px}
+.pago{background:var(--crema);border-radius:14px;padding:14px 16px;font-size:14px;margin-top:16px}
+form label{display:block;font-size:13px;font-weight:600;color:var(--verde);margin:12px 0 4px}
+form input,form select,form textarea{width:100%;font:inherit;font-size:15px;padding:11px 14px;border:1.5px solid var(--linea);border-radius:12px;background:var(--crema);color:var(--texto)}
+form .btn{width:100%;margin-top:18px}
+.nota{font-size:13px;color:var(--suave);margin-top:10px}
+
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:p}
+@media(max-width:860px){.pasos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+.paso{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:20px}
+.paso:before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--verde);color:var(--crema);font-weight:600;margin-bottom:10px}
+.paso b{display:block;color:var(--verde);margin-bottom:4px}
+.paso p{margin:0;font-size:14px;color:var(--suave)}
+
+details{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;color:var(--verde)}
+details p{margin:10px 0 0;color:var(--suave);font-size:15px}
+
+footer{background:var(--verde);color:var(--crema);padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:#E2C58E}
+.flotante{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:30}
+.flotante svg{width:28px;height:28px;fill:#fff}
+</style>
+<style>
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.prods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.prods{grid-template-columns:1fr}}
+.prod{background:#fff;border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.prod img{aspect-ratio:16/9;height:auto;object-fit:contain;width:100%;background:#213B32;display:block}
+.prod .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:26px}
+.prod p{margin:0;color:var(--suave);font-size:15px}
+.prod .pie{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px}
+.prod .precio{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--verde)}
+.prod .precio small{font-family:Montserrat,sans-serif;font-size:13px;color:var(--suave);font-weight:500}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--oro);letter-spacing:.12em;text-transform:uppercase}
+.paq{background:var(--verde);color:var(--crema);border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-top:26px}
+.paq h3{color:#fff;font-size:30px}.paq p{margin:4px 0 0;opacity:.9}
+.paq .btn{background:var(--oro);color:var(--verde)}
+@media(max-width:620px){.paq{grid-template-columns:1fr}}
+.en{background:var(--crema2)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="index.html" aria-label="Céfiro, inicio"><img src="logo.png" alt="Céfiro" width="101" height="46"></a>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#english">In English</a>
+      <a href="tienda.html">Aromatizantes</a>
+      <a class="btn" href="#productos">Ver productos</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:20px"><div class="wrap" style="display:block">
+  <span class="eyebrow">Céfiro Digital</span>
+  <h1>Herramientas listas para tu negocio</h1>
+  <p>Plantillas, kits de publicaciones y guías que hicimos para nuestro propio negocio. Descarga inmediata, para México, Estados Unidos y Latinoamérica.</p>
+</div></section>
+
+<section id="productos" style="padding-top:20px"><div class="wrap">
+  <div class="prods">
+      <article class="prod"><img src="digital/cotizador.jpg" alt="Cotizador para pymes" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Plantilla de Excel</span><h3>Cotizador para pymes</h3><p>Cotizaciones profesionales en 2 minutos. IVA o sales tax, anticipo y saldo automáticos, catálogo y seguimiento de ventas.</p><div class="pie"><span class="precio">$149 <small>MXN</small></span><a class="btn comprar" data-id="cotizador" data-nombre="Cotizador para pymes" data-precio="$149 MXN" href="#">Comprar</a></div></div></article>
+      <article class="prod"><img src="digital/inventario.jpg" alt="Control de inventario y ventas" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Plantilla de Excel</span><h3>Control de inventario y ventas</h3><p>Existencias al día, alerta de qué surtir, ganancia por venta y resumen del mes con tus más vendidos.</p><div class="pie"><span class="precio">$149 <small>MXN</small></span><a class="btn comprar" data-id="inventario" data-nombre="Control de inventario y ventas" data-precio="$149 MXN" href="#">Comprar</a></div></div></article>
+      <article class="prod"><img src="digital/calendario.jpg" alt="Calendario de contenido 2027" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Plantilla de Excel</span><h3>Calendario de contenido 2027</h3><p>171 ideas de publicaciones para todo el año, con fechas especiales de México y de Estados Unidos.</p><div class="pie"><span class="precio">$149 <small>MXN</small></span><a class="btn comprar" data-id="calendario" data-nombre="Calendario de contenido 2027" data-precio="$149 MXN" href="#">Comprar</a></div></div></article>
+      <article class="prod"><img src="digital/kit-autolavados.jpg" alt="Publicaciones para autolavados y talleres" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Kit editable · 20 diseños</span><h3>Publicaciones para autolavados y talleres</h3><p>Promociones, precios, paquetes, antes y después, tips y temporada navideña. Edita en Canva o PowerPoint.</p><div class="pie"><span class="precio">$249 <small>MXN</small></span><a class="btn comprar" data-id="kit-autolavados" data-nombre="Publicaciones para autolavados y talleres" data-precio="$249 MXN" href="#">Comprar</a></div></div></article>
+      <article class="prod"><img src="digital/kit-agencias.jpg" alt="Publicaciones para agencias de autos" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Kit editable · 20 diseños</span><h3>Publicaciones para agencias de autos</h3><p>Servicio, postventa, planes de mantenimiento y ventas. Solo cambia el logo y las fotos.</p><div class="pie"><span class="precio">$249 <small>MXN</small></span><a class="btn comprar" data-id="kit-agencias" data-nombre="Publicaciones para agencias de autos" data-precio="$249 MXN" href="#">Comprar</a></div></div></article>
+      <article class="prod"><img src="digital/guia.jpg" alt="Regalos promocionales que sí regresan la inversión" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Guía PDF · 13 páginas</span><h3>Regalos promocionales que sí regresan la inversión</h3><p>Cómo elegir, diseñar, repartir y medir artículos con tu marca. Con calculadora y checklist.</p><div class="pie"><span class="precio">$99 <small>MXN</small></span><a class="btn comprar" data-id="guia" data-nombre="Regalos promocionales que sí regresan la inversión" data-precio="$99 MXN" href="#">Comprar</a></div></div></article>
+  </div>
+  <div class="paq"><div><h3>Paquete completo de plantillas</h3><p>Cotizador, inventario, calendario 2027 y la guía, por $399 MXN en lugar de $546.</p></div><a class="btn comprar" data-id="paquete-plantillas" data-nombre="Paquete completo de plantillas" data-precio="$399 MXN" href="#">Comprar paquete</a></div>
+</div></section>
+
+<section id="english" class="en"><div class="wrap">
+  <div class="titulo"><span class="eyebrow">In English</span><h2>Templates for US small businesses</h2><p>The same tools, translated and adapted to US dates, sales tax and dollars.</p></div>
+  <div class="prods">
+      <article class="prod"><img src="digital/quote-builder.jpg" alt="Quote Builder for Small Business" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Excel template</span><h3>Quote Builder for Small Business</h3><p>Professional quotes in 2 minutes, with sales tax, deposit and a quote tracker.</p><div class="pie"><span class="precio">$9 <small>USD</small></span><a class="btn comprar" data-id="quote-builder" data-nombre="Quote Builder for Small Business" data-precio="$9 USD" href="#">Buy now</a></div></div></article>
+      <article class="prod"><img src="digital/inventory.jpg" alt="Inventory & Sales Tracker" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Excel template</span><h3>Inventory & Sales Tracker</h3><p>Stock levels, reorder alerts, profit per sale and a monthly summary.</p><div class="pie"><span class="precio">$9 <small>USD</small></span><a class="btn comprar" data-id="inventory" data-nombre="Inventory & Sales Tracker" data-precio="$9 USD" href="#">Buy now</a></div></div></article>
+      <article class="prod"><img src="digital/content-calendar.jpg" alt="Social Media Content Calendar 2027" loading="lazy" width="800" height="450"><div class="in"><span class="tag">Excel template</span><h3>Social Media Content Calendar 2027</h3><p>170 post ideas with US holidays and Hispanic dates like Cinco de Mayo.</p><div class="pie"><span class="precio">$9 <small>USD</small></span><a class="btn comprar" data-id="content-calendar" data-nombre="Social Media Content Calendar 2027" data-precio="$9 USD" href="#">Buy now</a></div></div></article>
+      <article class="prod"><img src="digital/car-wash-kit.jpg" alt="Car Wash & Auto Shop Social Media Kit" loading="lazy" width="800" height="450"><div class="in"><span class="tag">20 editable templates</span><h3>Car Wash & Auto Shop Social Media Kit</h3><p>Deals, price lists, packages, before-and-after and holiday posts.</p><div class="pie"><span class="precio">$15 <small>USD</small></span><a class="btn comprar" data-id="car-wash-kit" data-nombre="Car Wash & Auto Shop Social Media Kit" data-precio="$15 USD" href="#">Buy now</a></div></div></article>
+      <article class="prod"><img src="digital/dealership-kit.jpg" alt="Car Dealership Social Media Kit" loading="lazy" width="800" height="450"><div class="in"><span class="tag">20 editable templates</span><h3>Car Dealership Social Media Kit</h3><p>Service specials, maintenance plans, loaner cars and year-end sales.</p><div class="pie"><span class="precio">$15 <small>USD</small></span><a class="btn comprar" data-id="dealership-kit" data-nombre="Car Dealership Social Media Kit" data-precio="$15 USD" href="#">Buy now</a></div></div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="titulo"><span class="eyebrow">Preguntas</span><h2>Cómo funciona</h2></div>
+  <details><summary>¿Cómo recibo el archivo?</summary><p>Al pagar, te llega el enlace de descarga a tu correo en ese momento. Si compras por WhatsApp, te lo mandamos por ahí mismo.</p></details>
+  <details><summary>¿Necesito Excel?</summary><p>No. Las plantillas funcionan en Excel, en Google Sheets (gratis) y en LibreOffice. Los kits se editan en Canva, PowerPoint o Google Slides.</p></details>
+  <details><summary>¿Sirve si mi negocio está en Estados Unidos o en otro país?</summary><p>Sí. En el cotizador cambias el nombre del impuesto, la tasa y la moneda. El calendario trae fechas de México y de Estados Unidos, y hay versiones en inglés.</p></details>
+  <details><summary>¿Puedo compartir o revender las plantillas?</summary><p>Son para usarse en un negocio. No se permite revenderlas ni compartirlas.</p></details>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Céfiro</b> · Herramientas digitales y aromatizantes hechos en Sonora</div>
+    <div><a href="https://wa.me/526444624188" target="_blank" rel="noopener">WhatsApp 644 462 4188</a> · <a href="https://www.instagram.com/cefiromx/" target="_blank" rel="noopener">Instagram</a> · <a href="index.html">Para empresas</a></div>
+  </div>
+</footer>
+
+<a class="flotante" href="https://wa.me/526444624188?text=Hola%2C%20quiero%20un%20producto%20digital%20de%20C%C3%A9firo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a>
+
+<script>
+// Enlaces de pago (Payhip, Hotmart o Gumroad). Mientras un producto no tenga enlace, el botón abre WhatsApp con el pedido escrito.
+var PAGO = {
+  "cotizador": "", "inventario": "", "calendario": "", "kit-autolavados": "", "kit-agencias": "", "guia": "", "paquete-plantillas": "",
+  "quote-builder": "", "inventory": "", "content-calendar": "", "car-wash-kit": "", "dealership-kit": ""
+};
+document.querySelectorAll(".comprar").forEach(function(b){
+  var url = PAGO[b.dataset.id];
+  if (url) { b.href = url; }
+  else { b.href = "https://wa.me/526444624188?text=" + encodeURIComponent("Hola, quiero comprar: " + b.dataset.nombre + " (" + b.dataset.precio + ")"); }
+  b.target = "_blank"; b.rel = "noopener";
+});
+</script>
+</body>
+</html>
