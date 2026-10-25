@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Llantera Sahuaro · Página de muestra | Céfiro Páginas Web</title>
+<meta name="description" content="Página de muestra hecha por Céfiro Páginas Web para una llantera y taller. Negocio ficticio.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--negro:#16181C;--gris:#2A2E35;--acero:#8A929C;--amarillo:#F5B700;--claro:#F3F4F6;--tinta:#1C1F24}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Barlow,system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.6;font-size:16px}
+a{color:inherit}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;line-height:1;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.aviso{background:#1F3A33;color:#F6F3EC;font-size:13px;text-align:center;padding:8px 16px}
+.aviso a{color:#E2C58E;font-weight:600}
+header{background:var(--negro);color:#fff;position:sticky;top:0;z-index:10}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:14px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-decoration:none;letter-spacing:.02em}
+.logo b{color:var(--amarillo)}
+nav{display:flex;gap:22px;font-size:15px;align-items:center}
+nav a{text-decoration:none}
+nav a:hover{color:var(--amarillo)}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+.btn{display:inline-block;background:var(--amarillo);color:var(--negro);text-decoration:none;font-weight:600;padding:12px 22px;border-radius:6px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn.sec{background:transparent;color:#fff;border:2px solid #fff}
+header .btn{padding:8px 14px}
+.hero{background:linear-gradient(110deg,var(--negro) 55%,var(--gris));color:#fff;padding:70px 0}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(42px,7vw,76px)}
+.hero h1 span{color:var(--amarillo)}
+.hero p{font-size:18px;color:#D5D8DD;max-width:520px;margin:16px 0 26px}
+.llanta{justify-self:center;width:240px;height:240px;border-radius:50%;background:repeating-conic-gradient(#111 0 6deg,#2b2b2b 6deg 12deg);display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.llanta i{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#555 18%,#bbb 20%,#9aa 46%,#666 48%,#c9ccd1 60%);border:6px solid #222}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.llanta{width:180px;height:180px}.llanta i{width:90px;height:90px}}
+.marcas{background:var(--amarillo);padding:16px 0}
+.marcas .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;color:var(--negro)}
+section{padding:70px 0}
+h2{font-size:clamp(34px,5vw,50px);margin-bottom:8px}
+.sub{color:#5B626B;margin:0 0 30px}
+.servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.serv{background:var(--claro);border-radius:10px;padding:24px;border-left:5px solid var(--amarillo)}
+.serv h3{font-size:24px;margin-bottom:6px}
+.serv p{margin:0;color:#5B626B;font-size:15px}
+.serv b{display:block;margin-top:10px}
+@media(max-width:820px){.servicios{grid-template-columns:1fr}}
+.promo{background:var(--negro);color:#fff}
+.promo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cupon{border:2px dashed var(--amarillo);border-radius:12px;padding:26px}
+.cupon h3{font-size:30px;color:var(--amarillo)}
+.cupon p{color:#D5D8DD;margin:8px 0 0}
+@media(max-width:820px){.promo .wrap{grid-template-columns:1fr}}
+.cot .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--claro);padding:24px;border-radius:12px}
+form label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}
+form .full{grid-column:1/-1}
+input,select{font:inherit;padding:10px;border:1.5px solid #D5D8DD;border-radius:6px;background:#fff;width:100%}
+@media(max-width:820px){.cot .wrap{grid-template-columns:1fr}}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+.datos{list-style:none;padding:0;margin:0}
+.datos li{padding:10px 0;border-bottom:1px solid #E3E5E8}
+.datos b{display:block}
+footer{background:var(--negro);color:var(--acero);font-size:13px;text-align:center;padding:20px}
+footer a{color:var(--amarillo)}
+</style>
+</head>
+<body>
+<div class="aviso">Página de muestra hecha por <a href="../../">Céfiro Páginas Web</a>. El negocio es ficticio. <a href="../../#cotizar">¿Quieres una así?</a></div>
+<header><div class="wrap">
+  <a class="logo" href="#">Llantera <b>Sahuaro</b></a>
+  <nav><a href="#servicios">Servicios</a><a href="#promos">Promociones</a><a href="#cotizar">Cotizar llantas</a><a class="btn" href="tel:+526444624188">Llamar</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Llantas nuevas <span>y servicio</span> el mismo día</h1>
+    <p>Venta de llantas, alineación, balanceo y frenos. Cotiza tu medida en línea y te respondemos por WhatsApp en minutos.</p>
+    <a class="btn" href="#cotizar">Cotizar mis llantas</a>
+    <a class="btn sec" href="#servicios">Ver servicios</a>
+  </div>
+  <div class="llanta" aria-hidden="true"><i></i></div>
+</div></section>
+
+<div class="marcas"><div class="wrap"><span>Marca A</span><span>Marca B</span><span>Marca C</span><span>Marca D</span><span>Marca E</span></div></div>
+
+<section id="servicios"><div class="wrap">
+  <h2>Servicios</h2><p class="sub">Precios de muestra para auto compacto.</p>
+  <div class="servicios">
+    <div class="serv"><h3>Alineación</h3><p>Equipo computarizado y reporte impreso.</p><b>Desde $350</b></div>
+    <div class="serv"><h3>Balanceo</h3><p>Las cuatro llantas, con pesas incluidas.</p><b>Desde $240</b></div>
+    <div class="serv"><h3>Frenos</h3><p>Balatas, discos y revisión del sistema.</p><b>Cotización sin costo</b></div>
+    <div class="serv"><h3>Llantas nuevas</h3><p>Todas las medidas para auto, camioneta y pickup.</p><b>Instalación incluida</b></div>
+    <div class="serv"><h3>Suspensión</h3><p>Amortiguadores, rótulas y terminales.</p><b>Revisión gratis</b></div>
+    <div class="serv"><h3>Ponchaduras</h3><p>Reparación rápida mientras esperas.</p><b>Desde $80</b></div>
+  </div>
+</div></section>
+
+<section class="promo" id="promos"><div class="wrap">
+  <div class="cupon"><h3>Alineación y balanceo gratis</h3><p>Al comprar tus 4 llantas, el balanceo y la alineación van por nuestra cuenta. Promoción de muestra.</p></div>
+  <div class="cupon"><h3>Revisión de frenos gratis</h3><p>Muéstranos esta página en tu celular y revisamos tus frenos sin costo. Promoción de muestra.</p></div>
+</div></section>
+
+<section class="cot" id="cotizar"><div class="wrap">
+  <div>
+    <h2>Cotiza tus llantas</h2><p class="sub">Escribe la medida que viene en el costado de tu llanta (por ejemplo 205/55 R16) y te mandamos opciones por WhatsApp.</p>
+    <ul class="datos"><li><b>Dirección</b>Dirección de muestra, Hermosillo, Sonora</li><li><b>Horario</b>Lunes a sábado de 8:00 a 18:00</li><li><b>Pagos</b>Efectivo, tarjeta y meses sin intereses</li></ul>
+  </div>
+  <form id="f">
+    <label>Tu nombre<input id="n" autocomplete="name"></label>
+    <label>Medida de la llanta<input id="m" placeholder="205/55 R16"></label>
+    <label>Cantidad<select id="c"><option>4 llantas</option><option>2 llantas</option><option>1 llanta</option></select></label>
+    <label>Vehículo<input id="v" placeholder="Ej. Versa 2019"></label>
+    <div class="full"><button class="btn" type="submit">Enviar por WhatsApp</button></div>
+  </form>
+</div></section>
+
+<footer>Llantera Sahuaro es un negocio ficticio y las marcas son de muestra. Página hecha por <a href="../../">Céfiro Páginas Web</a> · Hecho en Sonora.</footer>
+<script>
+document.getElementById("f").addEventListener("submit", e => {
+  e.preventDefault();
+  const g = id => document.getElementById(id).value.trim();
+  const t = ["Hola, vi la página de muestra de la llantera y quiero una página así para mi negocio.", "(Prueba del formulario) Nombre: " + g("n"), "Medida: " + g("m"), "Cantidad: " + g("c"), "Vehículo: " + g("v")].join("\n");
+  window.open("https://wa.me/526444624188?text=" + encodeURIComponent(t), "_blank", "noopener");
+});
+</script>
+</body>
+</html>
