@@ -131,7 +131,7 @@ def main():
         reglas(nombre, p.get("texto", ""))
         if p.get("imagen") and not os.path.exists(os.path.join("redes", p["imagen"])):
             error(nombre, f"falta la imagen {p['imagen']}")
-        if sin_enlaces and "enlace de nuestra bio" in p.get("texto", ""):
+        if sin_enlaces and re.search(r"\$\d+ en el enlace de nuestra bio|Encuéntralas en el enlace", p.get("texto", "")):
             aviso(nombre, "manda al enlace de la bio, pero los productos digitales todavía no tienen enlace de pago")
 
     resumen = ["# Revisión de calidad de Céfiro", ""]
