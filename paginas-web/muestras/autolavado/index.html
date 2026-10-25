@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autolavado Brisa · Página de muestra | Céfiro Páginas Web</title>
+<meta name="description" content="Página de muestra hecha por Céfiro Páginas Web para un autolavado. Negocio ficticio.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--agua:#0E7C86;--agua2:#16A3A0;--claro:#EEF7F7;--tinta:#123B40;--suave:#4D6B6E;--sol:#FFC23D}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.aviso{background:#1F3A33;color:#F6F3EC;font-size:13px;text-align:center;padding:8px 16px}
+.aviso a{color:#E2C58E;font-weight:600}
+header{background:#fff;border-bottom:1px solid #E1EEEE;position:sticky;top:0;z-index:10}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:800;font-size:20px;color:var(--agua);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:linear-gradient(var(--agua2),var(--agua));display:inline-block}
+.btn{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px}
+.btn.sec{background:#fff;color:var(--agua)}
+header .btn{padding:9px 16px;font-size:14px;white-space:nowrap}
+@media(max-width:480px){.logo{font-size:17px}header .btn .larga{display:none}}
+.hero{background:linear-gradient(160deg,var(--agua),var(--agua2));color:#fff;padding:70px 0 80px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-60px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:0 0 16px;max-width:640px}
+.hero p{font-size:18px;max-width:520px;opacity:.95;margin:0 0 26px}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;font-size:14px}
+.hero .chips span{background:rgba(255,255,255,.16);padding:6px 14px;border-radius:999px}
+section{padding:70px 0}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;line-height:1.1}
+.sub{color:var(--suave);margin:0 0 30px}
+.paquetes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.paq{border:2px solid #E1EEEE;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:6px}
+.paq.top{border-color:var(--agua);background:var(--claro)}
+.paq h3{margin:0;font-size:22px}
+.paq .p{font-size:40px;font-weight:800;color:var(--agua);line-height:1}
+.paq ul{padding-left:18px;margin:10px 0 0;color:var(--suave);font-size:15px}
+@media(max-width:820px){.paquetes{grid-template-columns:1fr}}
+.claro{background:var(--claro)}
+.porque{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.porque div{background:#fff;border-radius:16px;padding:20px}
+.porque b{display:block;font-size:17px;margin-bottom:4px}
+.porque span{color:var(--suave);font-size:14px}
+@media(max-width:820px){.porque{grid-template-columns:1fr 1fr}}
+.opiniones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.op{border:1px solid #E1EEEE;border-radius:16px;padding:20px;font-size:15px}
+.op .estrellas{color:var(--sol);letter-spacing:2px}
+.op small{display:block;color:var(--suave);margin-top:8px}
+@media(max-width:820px){.opiniones{grid-template-columns:1fr}}
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.mapa{height:260px;border-radius:20px;background:
+ linear-gradient(90deg,transparent 48%,#fff 48%,#fff 52%,transparent 52%),
+ linear-gradient(0deg,transparent 46%,#fff 46%,#fff 54%,transparent 54%),
+ linear-gradient(30deg,transparent 70%,#fff 70%,#fff 73%,transparent 73%),#CFE5E5;position:relative}
+.mapa::after{content:"";position:absolute;left:calc(50% - 14px);top:calc(50% - 34px);width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#E5484D;border:4px solid #fff}
+.horario{list-style:none;padding:0;margin:0 0 20px}
+.horario li{display:flex;justify-content:space-between;border-bottom:1px solid #E1EEEE;padding:8px 0}
+@media(max-width:820px){.visita{grid-template-columns:1fr}}
+footer{background:var(--tinta);color:#cfe;font-size:13px;text-align:center;padding:20px}
+footer a{color:#E2C58E}
+</style>
+</head>
+<body>
+<div class="aviso">Página de muestra hecha por <a href="../../">Céfiro Páginas Web</a>. El negocio es ficticio. <a href="../../#cotizar">¿Quieres una así?</a></div>
+<header><div class="wrap"><a class="logo" href="#"><i></i>Autolavado Brisa</a><a class="btn" href="https://wa.me/526444624188?text=Hola%2C%20quiero%20una%20p%C3%A1gina%20como%20la%20muestra%20del%20autolavado" target="_blank" rel="noopener"><span class="larga">Agenda por </span>WhatsApp</a></div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>Tu auto como nuevo en 30 minutos.</h1>
+  <p>Lavado a mano, aspirado y encerado en Hermosillo. Agenda tu turno por WhatsApp y no hagas fila.</p>
+  <a class="btn" href="https://wa.me/526444624188?text=Hola%2C%20quiero%20una%20p%C3%A1gina%20como%20la%20muestra%20del%20autolavado" target="_blank" rel="noopener">Agendar mi lavado</a>
+  <a class="btn sec" href="#paquetes">Ver paquetes</a>
+  <div class="chips"><span>★ 4.8 en Google</span><span>Abierto hoy de 8:00 a 19:00</span><span>Aceptamos tarjeta</span></div>
+</div></section>
+
+<section id="paquetes"><div class="wrap">
+  <h2>Paquetes</h2><p class="sub">Precios para auto chico. Camioneta +$40.</p>
+  <div class="paquetes">
+    <div class="paq"><h3>Exprés</h3><span class="p">$120</span><ul><li>Lavado exterior a mano</li><li>Secado con microfibra</li><li>Llantas negras</li></ul></div>
+    <div class="paq top"><h3>Completo</h3><span class="p">$190</span><ul><li>Todo lo del Exprés</li><li>Aspirado de interiores</li><li>Tablero y vidrios</li><li>Aromatizante de regalo</li></ul></div>
+    <div class="paq"><h3>Brillo total</h3><span class="p">$450</span><ul><li>Todo lo del Completo</li><li>Encerado y pulido</li><li>Lavado de vestiduras</li></ul></div>
+  </div>
+</div></section>
+
+<section class="claro"><div class="wrap">
+  <h2>¿Por qué Brisa?</h2><p class="sub">Lo que nuestros clientes más valoran.</p>
+  <div class="porque">
+    <div><b>Sin filas</b><span>Agendas tu hora y llegas directo.</span></div>
+    <div><b>A mano</b><span>Sin rodillos que rayen tu pintura.</span></div>
+    <div><b>Sala con aire</b><span>Espera cómodo con wifi y café.</span></div>
+    <div><b>Tarjeta de lealtad</b><span>Tu lavado número 6 va por nuestra cuenta.</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Lo que dicen en Google</h2><p class="sub">Opiniones de muestra.</p>
+  <div class="opiniones">
+    <div class="op"><span class="estrellas">★★★★★</span><br>Agendé por WhatsApp y en media hora ya tenía mi camioneta lista.<small>Cliente de muestra</small></div>
+    <div class="op"><span class="estrellas">★★★★★</span><br>El aspirado quedó impecable y el trato muy amable.<small>Cliente de muestra</small></div>
+    <div class="op"><span class="estrellas">★★★★☆</span><br>Buen precio y la sala de espera con aire se agradece en verano.<small>Cliente de muestra</small></div>
+  </div>
+</div></section>
+
+<section class="claro"><div class="wrap visita">
+  <div>
+    <h2>Visítanos</h2><p class="sub">Dirección de muestra, Hermosillo, Sonora.</p>
+    <ul class="horario"><li><span>Lunes a viernes</span><b>8:00 a 19:00</b></li><li><span>Sábado</span><b>8:00 a 17:00</b></li><li><span>Domingo</span><b>9:00 a 14:00</b></li></ul>
+    <a class="btn" href="https://wa.me/526444624188?text=Hola%2C%20quiero%20una%20p%C3%A1gina%20como%20la%20muestra%20del%20autolavado" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  </div>
+  <div class="mapa" role="img" aria-label="Mapa de ubicación de muestra"></div>
+</div></section>
+
+<footer>Autolavado Brisa es un negocio ficticio. Página de muestra hecha por <a href="../../">Céfiro Páginas Web</a> · Hecho en Sonora.</footer>
+</body>
+</html>
