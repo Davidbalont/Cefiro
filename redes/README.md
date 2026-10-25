@@ -1,6 +1,6 @@
 # Publicaciones automáticas en Facebook e Instagram
 
-Todos los días a las 7:00 pm (hora de Sonora) GitHub revisa `calendario.json` y publica
+Todos los días cerca de las 11:00 am (hora de Sonora) GitHub revisa `calendario.json` y publica
 en Facebook e Instagram la siguiente publicación cuya fecha ya llegó. Publica una por día
 como máximo y anota lo publicado en `publicadas.json`, así nunca repite.
 

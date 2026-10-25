@@ -1,7 +1,7 @@
 name: Publicar en redes
 on:
   schedule:
-    - cron: "0 2 * * *" # 7:00 pm en Sonora (UTC-7)
+    - cron: "50 17 * * *" # ~11:00 am en Sonora (UTC-7); GitHub suele arrancar unos minutos tarde
   workflow_dispatch:
     inputs:
       prueba:
