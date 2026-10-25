@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tienda Céfiro · Aromatizantes para auto en paquete</title>
-<meta name="description" content="Compra aromatizantes Céfiro para tu auto en paquetes de 3, 6, 12 y 24 piezas. 8 aromas, hechos en Sonora, empaque individual sellado. Pide por WhatsApp y recibe en todo México.">
+<meta name="description" content="Compra aromatizantes Céfiro para tu auto en paquetes de 3, 6, 12 y 24 piezas. 8 aromas, hechos en Sonora, empaque individual sellado. Pide por WhatsApp y recibe en todo México o en Estados Unidos.">
 <link rel="canonical" href="https://davidbalont.github.io/Cefiro/tienda.html">
 <meta property="og:title" content="Tienda Céfiro · Aromatizantes para auto">
 <meta property="og:description" content="Paquetes de 3, 6, 12 y 24 aromatizantes. 8 aromas. Pide por WhatsApp.">
@@ -133,7 +133,7 @@ footer a{color:#E2C58E}
     <div>
       <span class="eyebrow">Tienda Céfiro</span>
       <h1>Tu auto huele bien todos los días</h1>
-      <p>Aromatizantes Céfiro en paquete, hechos en Sonora. Elige tus aromas, pide por WhatsApp y te lo mandamos a cualquier parte de México.</p>
+      <p>Aromatizantes Céfiro en paquete, hechos en Sonora. Elige tus aromas, pide por WhatsApp y te lo mandamos a cualquier parte de México o de Estados Unidos.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="#paquetes">Ver paquetes</a>
         <a class="btn sec" href="#aromas">Conocer los aromas</a>
@@ -148,7 +148,7 @@ footer a{color:#E2C58E}
     <div><b>8 aromas</b><span>Para combinar como quieras</span></div>
     <div><b>Desde $18.71</b><span>Por pieza en paquete de 24</span></div>
     <div><b>Bolsa sellada</b><span>Cada pieza en su bolsa transparente</span></div>
-    <div><b>Todo México</b><span>Envío por paquetería</span></div>
+    <div><b>México y EE. UU.</b><span>Envío por paquetería a donde estés</span></div>
   </div>
 </div>
 
@@ -190,12 +190,12 @@ footer a{color:#E2C58E}
       <form id="forma">
         <label for="nombre">Tu nombre</label>
         <input id="nombre" required autocomplete="name">
-        <label for="ciudad">Ciudad y código postal</label>
-        <input id="ciudad" required placeholder="Ej. Monterrey, 64000">
+        <label for="ciudad">Ciudad, estado o país y código postal</label>
+        <input id="ciudad" required placeholder="Ej. Guadalajara, Jalisco, 44100">
         <label for="entrega">Entrega</label>
         <select id="entrega">
-          <option>Envío por paquetería</option>
-          <option>Entrega en mano en Monterrey (tardes o sábado)</option>
+          <option>Envío a México por paquetería</option>
+          <option>Envío a Estados Unidos</option>
         </select>
         <label for="notas">Algo más (opcional)</label>
         <textarea id="notas" rows="2" placeholder="Ej. es para regalo, lo quiero antes del 15 de diciembre"></textarea>
@@ -228,11 +228,12 @@ footer a{color:#E2C58E}
       <h2>Lo que más nos preguntan</h2>
     </div>
     <details><summary>¿Cuánto cuesta el envío?</summary><p>Depende de tu código postal; te lo confirmamos por WhatsApp antes del anticipo. El paquete de 24 piezas lleva envío gratis a todo México.</p></details>
+    <details><summary>¿Envían fuera de México?</summary><p>Sí, a Estados Unidos por paquetería internacional. Te cotizamos el envío a tu dirección por WhatsApp antes del anticipo.</p></details>
     <details><summary>¿Cuánto dura el aroma?</summary><p>Varias semanas. Para que dure más, saca la pieza de su bolsa poco a poco: primero solo la parte de arriba y cada semana un poco más.</p></details>
     <details><summary>¿Puedo mezclar aromas?</summary><p>Sí, en cualquier paquete. Dinos cuántas piezas de cada aroma quieres en el mensaje.</p></details>
     <details><summary>¿Cómo viene empacado?</summary><p>Cada pieza viene en su bolsa transparente sellada, para que conserve el aroma hasta que la abras.</p></details>
     <details><summary>¿Los venden para revender o para mi negocio?</summary><p>Sí. El paquete de 24 es el favorito de conductores, autolavados y tienditas. Si quieres aromatizantes con el logo de tu negocio, mira <a href="index.html">Céfiro para empresas</a>.</p></details>
-    <details><summary>¿Cuándo me llega?</summary><p>Enviamos en 1 a 3 días hábiles después del anticipo; la paquetería tarda de 2 a 5 días hábiles según tu ciudad.</p></details>
+    <details><summary>¿Cuándo me llega?</summary><p>Enviamos en 1 a 3 días hábiles después del anticipo; la paquetería tarda de 2 a 5 días hábiles dentro de México y de 5 a 10 a Estados Unidos.</p></details>
   </div>
 </section>
 
@@ -342,7 +343,7 @@ document.getElementById("forma").addEventListener("submit", function(e){
     "\nAromas: " + (elegidos.length ? elegidos.join(", ") : "mezcla surtida") +
     "\nTotal: " + pesos(total) + " (IVA incluido, sin envío)" +
     "\nNombre: " + document.getElementById("nombre").value +
-    "\nCiudad y CP: " + document.getElementById("ciudad").value +
+    "\nDestino y CP: " + document.getElementById("ciudad").value +
     "\nEntrega: " + document.getElementById("entrega").value;
   var n = document.getElementById("notas").value.trim();
   if (n) m += "\nNotas: " + n;
