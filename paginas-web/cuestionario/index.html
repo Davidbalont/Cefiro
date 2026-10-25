@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario para tu página | Céfiro Páginas Web</title>
+<meta name="description" content="Cuestionario para armar la página de tu negocio con Céfiro Páginas Web.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--crema:#F6F3EC;--crema2:#EDE7DA;--verde:#1F3A33;--verde2:#2C5047;--oro:#B48A45;--texto:#24312D;--suave:#5E6B66;--linea:#DDD6C7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:Montserrat,system-ui,sans-serif;line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-variant-numeric:lining-nums;font-family:'Cormorant Garamond',Georgia,serif;color:var(--verde);font-weight:700;line-height:1.1;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:var(--crema);text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;transition:background .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--verde2)}
+.btn.sec{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+.btn.sec:hover{background:var(--crema2)}
+header{position:sticky;top:0;z-index:20;background:rgba(246,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{height:46px;width:auto}
+.marca span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600;border-left:1px solid var(--linea);padding-left:10px}
+nav{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:500}
+nav a{text-decoration:none}
+nav a:not(.btn):hover{color:var(--oro)}
+nav .btn{padding:9px 18px;font-size:14px}
+@media(max-width:820px){nav a:not(.btn){display:none}.marca span{display:none}}
+section{padding:80px 0}
+.titulo{max-width:660px;margin-bottom:34px}
+.titulo h2{font-size:clamp(32px,4.5vw,46px);margin:10px 0 12px}
+.titulo p{color:var(--suave);margin:0;font-size:17px}
+
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,62px);margin:14px 0 18px}
+.hero p{font-size:18px;color:var(--suave);max-width:540px;margin:0 0 28px}
+.acciones{display:flex;gap:12px;flex-wrap:wrap}
+.garantia{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:var(--suave)}
+.garantia span::before{content:"✓ ";color:var(--oro);font-weight:700}
+.telefono{justify-self:center;width:280px;background:var(--verde);border-radius:38px;padding:12px;box-shadow:0 24px 60px rgba(31,58,51,.25)}
+.telefono .pantalla{background:#fff;border-radius:28px;overflow:hidden;height:520px;display:flex;flex-direction:column}
+.telefono .barra{height:26px;background:#0E7C86;display:flex;align-items:center;justify-content:center}
+.telefono .barra i{width:70px;height:6px;border-radius:9px;background:rgba(255,255,255,.4)}
+.telefono .portada{background:linear-gradient(160deg,#0E7C86,#16A3A0);color:#fff;padding:26px 20px 30px}
+.telefono .portada b{font-size:22px;display:block;line-height:1.15;font-weight:700}
+.telefono .portada small{opacity:.9;font-size:12px}
+.telefono .wa{margin-top:14px;display:inline-block;background:#25D366;color:#fff;font-size:12px;font-weight:600;padding:8px 14px;border-radius:999px}
+.telefono .bloques{padding:16px;display:grid;gap:10px}
+.telefono .bloques div{background:#EEF7F7;border-radius:12px;padding:12px;font-size:12px;color:#164B50}
+.telefono .bloques div b{display:block;font-size:13px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:36px}}
+
+.datos{background:var(--verde);color:var(--crema)}
+.datos .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px}
+.datos b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:#E2C58E;line-height:1.1;font-variant-numeric:lining-nums}
+.datos span{font-size:14px;opacity:.9}
+@media(max-width:760px){.datos .wrap{grid-template-columns:repeat(2,1fr)}}
+
+.muestras{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.muestra{background:#fff;border:1px solid var(--linea);border-radius:20px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.muestra:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(31,58,51,.12)}
+.muestra .vista{height:190px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.muestra .vista b{font-size:24px;line-height:1.1}
+.muestra .vista small{opacity:.9;font-size:13px}
+.muestra .info{padding:16px 18px 20px}
+.muestra h3{font-family:Montserrat,sans-serif;font-size:16px;font-weight:600}
+.muestra p{margin:4px 0 10px;color:var(--suave);font-size:14px}
+.muestra .ver{font-size:14px;font-weight:600;color:var(--oro)}
+@media(max-width:860px){.muestras{grid-template-columns:1fr}}
+
+.proceso{background:var(--crema2)}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:p}
+.paso{background:var(--crema);border-radius:18px;padding:24px;border:1px solid var(--linea)}
+.paso::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--verde);color:var(--crema);font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:14px}
+.paso h3{font-size:24px;margin-bottom:6px}
+.paso p{margin:0;color:var(--suave);font-size:15px}
+@media(max-width:900px){.pasos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+
+.precios{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px;position:relative}
+.plan.dest{border:2px solid var(--verde);box-shadow:0 14px 34px rgba(31,58,51,.12)}
+.plan .tag{position:absolute;top:-12px;left:24px;background:var(--verde);color:var(--crema);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:26px}
+.plan .precio{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--verde);line-height:1;font-variant-numeric:lining-nums tabular-nums;margin-top:4px}
+.plan .iva{font-size:13px;color:var(--suave)}
+.plan ul{list-style:none;padding:0;margin:10px 0 0;font-size:14px;display:grid;gap:6px;border-top:1px solid var(--crema2);padding-top:12px}
+.plan li::before{content:"✓ ";color:var(--oro);font-weight:700}
+.plan .entrega{margin-top:auto;padding-top:12px;font-size:13px;font-weight:600;color:var(--verde2)}
+@media(max-width:1000px){.precios{grid-template-columns:repeat(2,1fr);gap:26px}}
+@media(max-width:560px){.precios{grid-template-columns:1fr}}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.extra{background:var(--crema);border:1px solid var(--linea);border-radius:16px;padding:18px}
+.extra b{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--verde)}
+.extra .monto{font-weight:600;color:var(--oro);font-size:15px}
+.extra p{margin:4px 0 0;font-size:14px;color:var(--suave)}
+@media(max-width:860px){.extras{grid-template-columns:1fr}}
+.garantia-precio{margin:22px 0 0;font-weight:600;color:var(--verde);font-size:15px}
+.letra{font-size:13px;color:var(--suave);margin:10px 0 0;max-width:820px}
+
+.combo{background:var(--verde);color:var(--crema)}
+.combo .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.combo h2{color:var(--crema);font-size:clamp(32px,4.5vw,46px);margin:10px 0 14px}
+.combo p{opacity:.92;font-size:17px;margin:0 0 14px}
+.combo .btn{background:#E2C58E;color:var(--verde)}
+.combo .btn:hover{background:#ecd3a3}
+.aroma{justify-self:center;position:relative;width:220px;height:300px}
+.aroma .hilo{position:absolute;left:50%;top:0;width:2px;height:60px;background:#E2C58E}
+.aroma .pieza{position:absolute;top:56px;left:10px;width:200px;height:230px;border-radius:46% 46% 40% 40%;background:var(--crema);display:grid;place-items:center;text-align:center;color:var(--verde);padding:20px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.aroma .pieza small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-top:6px}
+.qr{width:96px;height:96px;margin:0 auto;background:
+ conic-gradient(from 90deg at 30% 30%,var(--verde) 25%,transparent 0) 0 0/24px 24px,
+ repeating-linear-gradient(45deg,var(--verde) 0 4px,transparent 4px 9px);border:6px solid var(--verde);border-radius:6px}
+@media(max-width:860px){.combo .wrap{grid-template-columns:1fr}}
+
+.cotizar{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.cotizar .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.cotizar ul{padding-left:18px;color:var(--suave)}
+.cotizar li{margin:6px 0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--crema);border:1px solid var(--linea);border-radius:20px;padding:24px}
+form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--verde);min-width:0}
+form .full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:15px;font-weight:400;color:var(--texto);background:#fff;border:1.5px solid var(--linea);border-radius:10px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--oro);outline-offset:1px;border-color:var(--oro)}
+form .botones{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+form .nota{grid-column:1/-1;font-size:13px;color:var(--suave);margin:0}
+@media(max-width:860px){.cotizar .wrap{grid-template-columns:1fr}}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--linea);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--verde);font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--oro)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:10px 0 0;color:var(--suave)}
+footer{background:#172C26;color:rgba(246,243,236,.7);font-size:13px;padding:22px 0;text-align:center}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.flotante svg{width:30px;height:30px;fill:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.cuest{max-width:820px}
+fieldset{border:1px solid var(--linea);border-radius:18px;padding:22px;margin:0 0 20px;background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+legend{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--verde);padding:0 8px}
+fieldset label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--verde);min-width:0}
+fieldset .full{grid-column:1/-1}
+.ayuda{font-weight:400;color:var(--suave);font-size:12.5px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:400;font-size:14px;color:var(--texto)}
+.checks label{flex-direction:row;align-items:center;gap:6px;font-weight:400;color:var(--texto);font-size:14px}
+.checks input{width:auto}
+@media(max-width:560px){fieldset{grid-template-columns:1fr}}
+.enviar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marca" href="../" aria-label="Céfiro Páginas Web"><img src="../../logo.png" alt="Céfiro"><span>Páginas web</span></a>
+    <nav><a href="../#precios">Precios</a><a class="btn" href="../">Volver</a></nav>
+  </div>
+</header>
+<main>
+<section>
+  <div class="wrap cuest">
+    <div class="titulo">
+      <div class="eyebrow">Cuestionario</div>
+      <h2>Cuéntanos todo para armar tu página</h2>
+      <p>Te toma unos 10 minutos. Lo que no sepas, déjalo en blanco y lo vemos juntos. Al final se abre WhatsApp o tu correo con tus respuestas; ahí mismo nos mandas tu logo y tus fotos.</p>
+    </div>
+    <form id="q" novalidate style="display:block;background:none;border:0;padding:0">
+      <fieldset><legend>Tu negocio</legend>
+        <label>Nombre del negocio<input name="Negocio" required></label>
+        <label>Tu nombre<input name="Contacto" autocomplete="name" required></label>
+        <label>Giro<input name="Giro" placeholder="Ej. taller mecánico"></label>
+        <label>Paquete<select name="Paquete"><option>Página Express</option><option selected>Sitio Negocio</option><option>Catálogo</option><option>Tienda en línea</option><option>Combo con aromatizantes</option></select></label>
+        <label class="full">¿Qué hace tu negocio y qué lo hace diferente?<textarea name="Descripción" rows="3" placeholder="En dos o tres frases, como se lo explicarías a un cliente nuevo"></textarea></label>
+      </fieldset>
+      <fieldset><legend>Servicios o productos</legend>
+        <label class="full">Lista de servicios o productos, con precio si quieres mostrarlo<textarea name="Servicios" rows="5" placeholder="Ej.&#10;Lavado exterior, $120&#10;Lavado completo, $190"></textarea></label>
+        <label class="full">Promoción actual (opcional)<input name="Promoción"></label>
+      </fieldset>
+      <fieldset><legend>Datos de contacto que irán en la página</legend>
+        <label>WhatsApp<input name="WhatsApp" inputmode="tel"></label>
+        <label>Teléfono fijo<input name="Teléfono" inputmode="tel"></label>
+        <label>Correo<input name="Correo" type="email"></label>
+        <label>Dirección<input name="Dirección"></label>
+        <label class="full">Horario<input name="Horario" placeholder="Ej. lunes a viernes 8 a 18, sábado 8 a 14"></label>
+        <label class="full">Redes sociales<input name="Redes" placeholder="Enlaces de Facebook, Instagram, TikTok"></label>
+      </fieldset>
+      <fieldset><legend>Dominio y estilo</legend>
+        <label>¿Ya tienes dominio?<input name="Dominio" placeholder="Ej. no, o minegocio.com"></label>
+        <label>Dominio que te gustaría<input name="Dominio deseado" placeholder="Ej. tallerlopez.com.mx"></label>
+        <label>Colores de tu marca<input name="Colores" placeholder="Ej. azul y amarillo, como el logo"></label>
+        <label>Páginas que te gustan<input name="Referencias" placeholder="Enlaces de ejemplo"></label>
+        <div class="full"><span style="font-size:13px;font-weight:600;color:var(--verde)">¿Qué debe tener tu página?</span>
+          <div class="checks">
+            <label><input type="checkbox" name="Incluir" value="Botón de WhatsApp" checked>Botón de WhatsApp</label>
+            <label><input type="checkbox" name="Incluir" value="Mapa">Mapa</label>
+            <label><input type="checkbox" name="Incluir" value="Galería de fotos">Galería de fotos</label>
+            <label><input type="checkbox" name="Incluir" value="Formulario de contacto">Formulario de contacto</label>
+            <label><input type="checkbox" name="Incluir" value="Opiniones de clientes">Opiniones de clientes</label>
+            <label><input type="checkbox" name="Incluir" value="Versión en inglés">Versión en inglés</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset><legend>Material</legend>
+        <div class="full checks">
+          <label><input type="checkbox" name="Material" value="Tengo logo">Tengo logo</label>
+          <label><input type="checkbox" name="Material" value="Tengo fotos">Tengo fotos</label>
+          <label><input type="checkbox" name="Material" value="Necesito ayuda con textos">Necesito ayuda con los textos</label>
+        </div>
+        <label class="full">Algo más<textarea name="Notas" rows="3"></textarea></label>
+        <p class="ayuda full" style="margin:0">Pagas 50% de anticipo para iniciar y 50% cuando recibes tu página. Si necesitas una revisión por videollamada, la agendamos después de las 5:00 p. m. o en sábado.</p>
+      </fieldset>
+      <div class="enviar">
+        <button class="btn" type="submit">Enviar por WhatsApp</button>
+        <button class="btn sec" type="button" id="q-correo">Enviar por correo</button>
+        <span class="ayuda" id="q-nota">Después de enviar, adjunta tu logo y tus fotos en el mismo chat.</span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+<footer>Céfiro Páginas Web · Hecho en Sonora, México</footer>
+<script>
+const q = document.getElementById("q");
+function texto() {
+  const l = ["Cuestionario para mi página web (Céfiro Páginas Web)"];
+  const d = new FormData(q), vistos = {};
+  for (const [k, v] of d.entries()) { const t = String(v).trim(); if (!t) continue; (vistos[k] = vistos[k] || []).push(t); }
+  for (const k in vistos) l.push(k + ": " + vistos[k].join(", "));
+  return l.join("\n");
+}
+function valido() {
+  const falta = ["Negocio","Contacto"].find(n => !q.elements[n].value.trim());
+  if (falta) { document.getElementById("q-nota").textContent = "Escribe el nombre del negocio y el tuyo para enviar."; q.elements[falta].focus(); return false; }
+  return true;
+}
+q.addEventListener("submit", e => { e.preventDefault(); if (valido()) window.open("https://wa.me/526444624188?text=" + encodeURIComponent(texto()), "_blank", "noopener"); });
+document.getElementById("q-correo").onclick = () => { if (valido()) location.href = "mailto:davidbalont8@gmail.com?subject=" + encodeURIComponent("Cuestionario de página web") + "&body=" + encodeURIComponent(texto()); };
+</script>
+</body>
+</html>
