@@ -4,11 +4,16 @@ Todos los días cerca de las 11:00 am (hora de Sonora) GitHub revisa `calendario
 en Facebook e Instagram la siguiente publicación cuya fecha ya llegó. Publica una por día
 como máximo y anota lo publicado en `publicadas.json`, así nunca repite.
 
-- `calendario.json`: fecha, imagen y texto de cada publicación.
+- `calendario.json`: fecha y texto de cada publicación, con uno de estos:
+  - `imagen`: una sola foto.
+  - `imagenes`: varias fotos, que salen como carrusel.
+  - `video` y `portada`: un reel vertical en MP4, con su imagen de portada.
 - `imagenes/`: las imágenes en JPG cuadrado (Instagram solo acepta JPG).
+- `videos/`: los reels. Se publican desde GitHub Pages, que los sirve como video.
 - `publicar.py`: el programa que publica con la API de Meta.
 
-Para agregar publicaciones, suma entradas a `calendario.json` con un `id` nuevo.
+Para agregar publicaciones, suma entradas a `calendario.json` con un `id` nuevo. Si un día
+falla, al día siguiente sale la pendiente más antigua.
 
 ## Paso único: el permiso de Meta (token que no caduca)
 

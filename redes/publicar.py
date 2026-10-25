@@ -1,6 +1,7 @@
 """Publica en Facebook e Instagram la siguiente publicacion pendiente de calendario.json.
 
 Usa la API Graph de Meta con el token de la pagina (secreto META_PAGE_TOKEN).
+Cada publicacion lleva "imagen" (una foto), "imagenes" (carrusel) o "video" (reel).
 Publica como maximo una publicacion por corrida: la mas antigua cuya fecha ya llego
 y que todavia no aparece en publicadas.json. La hora local es la de Sonora (UTC-7).
 """
@@ -14,6 +15,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 API = "https://graph.facebook.com/v21.0"
+API_VIDEO = "https://graph-video.facebook.com/v21.0"
 AQUI = os.path.dirname(os.path.abspath(__file__))
 CALENDARIO = os.path.join(AQUI, "calendario.json")
 PUBLICADAS = os.path.join(AQUI, "publicadas.json")
@@ -27,16 +29,16 @@ class ErrorMeta(SystemExit):
 TOKEN = {"valor": os.environ.get("META_PAGE_TOKEN", "")}
 
 
-def graph(metodo, ruta, **params):
+def graph(metodo, ruta, base=API, **params):
     params.setdefault("access_token", TOKEN["valor"])
     datos = urllib.parse.urlencode(params).encode()
-    url = f"{API}/{ruta}"
+    url = f"{base}/{ruta}"
     if metodo == "GET":
         req = urllib.request.Request(f"{url}?{datos.decode()}")
     else:
         req = urllib.request.Request(url, data=datos, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
+        with urllib.request.urlopen(req, timeout=300) as r:
             return json.load(r)
     except urllib.error.HTTPError as e:
         cuerpo = e.read().decode(errors="replace")
@@ -49,21 +51,58 @@ def url_imagen(ruta):
     return f"https://raw.githubusercontent.com/{repo}/{sha}/redes/{ruta}"
 
 
-def publicar_facebook(pagina_id, imagen, texto):
-    r = graph("POST", f"{pagina_id}/photos", url=imagen, message=texto)
+def url_video(ruta):
+    # GitHub Pages sirve los mp4 como video/mp4; raw.githubusercontent no.
+    dueno, repo = os.environ["GITHUB_REPOSITORY"].split("/")
+    return f"https://{dueno.lower()}.github.io/{repo}/redes/{ruta}"
+
+
+def publicar_facebook(pagina_id, p, texto):
+    if "video" in p:
+        r = graph("POST", f"{pagina_id}/videos", base=API_VIDEO, file_url=url_video(p["video"]), description=texto)
+        return r.get("id")
+    if "imagenes" in p:
+        fotos = [graph("POST", f"{pagina_id}/photos", url=url_imagen(i), published="false")["id"] for i in p["imagenes"]]
+        adjuntos = {f"attached_media[{n}]": json.dumps({"media_fbid": f}) for n, f in enumerate(fotos)}
+        return graph("POST", f"{pagina_id}/feed", message=texto, **adjuntos)["id"]
+    r = graph("POST", f"{pagina_id}/photos", url=url_imagen(p["imagen"]), message=texto)
     return r.get("post_id") or r.get("id")
 
 
-def publicar_instagram(ig_id, imagen, texto):
-    contenedor = graph("POST", f"{ig_id}/media", image_url=imagen, caption=texto)["id"]
-    for _ in range(30):
+def esperar(contenedor, intentos=30):
+    for _ in range(intentos):
         estado = graph("GET", contenedor, fields="status_code")["status_code"]
         if estado == "FINISHED":
-            break
+            return
         if estado == "ERROR":
-            raise SystemExit("Instagram no pudo procesar la imagen")
-        time.sleep(5)
+            raise SystemExit("Instagram no pudo procesar el archivo")
+        time.sleep(10)
+    raise SystemExit("Instagram tardo demasiado en procesar el archivo")
+
+
+def publicar_instagram(ig_id, p, texto):
+    if "video" in p:
+        contenedor = graph("POST", f"{ig_id}/media", media_type="REELS", video_url=url_video(p["video"]),
+                           cover_url=url_imagen(p["portada"]), caption=texto, share_to_feed="true")["id"]
+        esperar(contenedor, intentos=60)
+    elif "imagenes" in p:
+        hijos = []
+        for i in p["imagenes"]:
+            hijo = graph("POST", f"{ig_id}/media", image_url=url_imagen(i), is_carousel_item="true")["id"]
+            esperar(hijo)
+            hijos.append(hijo)
+        contenedor = graph("POST", f"{ig_id}/media", media_type="CAROUSEL", children=",".join(hijos), caption=texto)["id"]
+        esperar(contenedor)
+    else:
+        contenedor = graph("POST", f"{ig_id}/media", image_url=url_imagen(p["imagen"]), caption=texto)["id"]
+        esperar(contenedor)
     return graph("POST", f"{ig_id}/media_publish", creation_id=contenedor)["id"]
+
+
+def archivos(p):
+    if "video" in p:
+        return f"video {url_video(p['video'])}"
+    return "imagenes " + " ".join(url_imagen(i) for i in p.get("imagenes") or [p["imagen"]])
 
 
 def buscar_pagina():
@@ -104,8 +143,7 @@ def main():
     pagina_id = pagina["id"]
     ig_id = (pagina.get("instagram_business_account") or {}).get("id")
     print(f"Pagina: {pagina.get('name')} | Instagram conectado: {'si' if ig_id else 'NO'}")
-    imagen = url_imagen(p["imagen"])
-    print(f"Siguiente: {p['id']} (fecha {p['fecha']}) imagen {imagen}")
+    print(f"Siguiente: {p['id']} (fecha {p['fecha']}) {archivos(p)}")
     if prueba:
         print("Modo prueba: no se publico nada.")
         return
@@ -118,11 +156,11 @@ def main():
 
     # Se guarda despues de cada red para no repetir Facebook si Instagram falla.
     if "facebook" not in registro:
-        registro["facebook"] = publicar_facebook(pagina_id, imagen, p["texto"])
+        registro["facebook"] = publicar_facebook(pagina_id, p, p["texto"])
         print("Facebook:", registro["facebook"])
         guardar()
     if ig_id and "instagram" not in registro:
-        registro["instagram"] = publicar_instagram(ig_id, imagen, p["texto"])
+        registro["instagram"] = publicar_instagram(ig_id, p, p["texto"])
         print("Instagram:", registro["instagram"])
         guardar()
     if not ig_id:
