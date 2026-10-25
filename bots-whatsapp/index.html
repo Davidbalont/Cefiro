@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Asistente y chatbot de WhatsApp para negocios en todo México | Céfiro Bots</title>
+<meta name="description" content="Céfiro Bots: dejamos tu WhatsApp Business listo para vender, con catálogo, respuestas automáticas y un asistente que contesta 24/7, toma pedidos y agenda citas. Desde $1,900 + IVA. Para negocios de todo México y negocios hispanos en Estados Unidos.">
+<link rel="canonical" href="https://davidbalont.github.io/Cefiro/bots-whatsapp/">
+<meta property="og:title" content="Céfiro Bots · Tu WhatsApp contesta y vende las 24 horas">
+<meta property="og:description" content="Céfiro Bots: dejamos tu WhatsApp Business listo para vender, con catálogo, respuestas automáticas y un asistente que contesta 24/7, toma pedidos y agenda citas. Desde $1,900 + IVA. Para negocios de todo México y negocios hispanos en Estados Unidos.">
+<meta property="og:image" content="https://davidbalont.github.io/Cefiro/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Céfiro Bots", "description": "Configuración de WhatsApp Business y asistentes automáticos que responden, toman pedidos y agendan citas para negocios.", "url": "https://davidbalont.github.io/Cefiro/bots-whatsapp/", "logo": "https://davidbalont.github.io/Cefiro/logo.png", "telephone": "+526444624188", "email": "davidbalont8@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Hermosillo", "addressRegion": "Sonora", "addressCountry": "MX"}, "areaServed": ["México", "Estados Unidos"], "priceRange": "$1,900 - $8,900 MXN + IVA"}</script>
+<link rel="icon" href="../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--crema:#F6F3EC;--crema2:#EDE7DA;--verde:#1F3A33;--verde2:#2C5047;--oro:#B48A45;--texto:#24312D;--suave:#5E6B66;--linea:#DDD6C7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:Montserrat,system-ui,sans-serif;line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-variant-numeric:lining-nums;font-family:'Cormorant Garamond',Georgia,serif;color:var(--verde);font-weight:700;line-height:1.1;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:var(--crema);text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;transition:background .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--verde2)}
+.btn.sec{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+.btn.sec:hover{background:var(--crema2)}
+header{position:sticky;top:0;z-index:20;background:rgba(246,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{height:46px;width:auto}
+.marca span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600;border-left:1px solid var(--linea);padding-left:10px}
+nav{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:500}
+nav a{text-decoration:none}
+nav a:not(.btn):hover{color:var(--oro)}
+nav .btn{padding:9px 18px;font-size:14px}
+@media(max-width:820px){nav a:not(.btn){display:none}.marca span{display:none}}
+section{padding:80px 0}
+.titulo{max-width:660px;margin-bottom:34px}
+.titulo h2{font-size:clamp(32px,4.5vw,46px);margin:10px 0 12px}
+.titulo p{color:var(--suave);margin:0;font-size:17px}
+
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,62px);margin:14px 0 18px}
+.hero p{font-size:18px;color:var(--suave);max-width:540px;margin:0 0 28px}
+.acciones{display:flex;gap:12px;flex-wrap:wrap}
+.garantia{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:var(--suave)}
+.garantia span::before{content:"✓ ";color:var(--oro);font-weight:700}
+.telefono{justify-self:center;width:280px;background:var(--verde);border-radius:38px;padding:12px;box-shadow:0 24px 60px rgba(31,58,51,.25)}
+.telefono .pantalla{background:#fff;border-radius:28px;overflow:hidden;height:520px;display:flex;flex-direction:column}
+.telefono .barra{height:26px;background:#0E7C86;display:flex;align-items:center;justify-content:center}
+.telefono .barra i{width:70px;height:6px;border-radius:9px;background:rgba(255,255,255,.4)}
+.telefono .portada{background:linear-gradient(160deg,#0E7C86,#16A3A0);color:#fff;padding:26px 20px 30px}
+.telefono .portada b{font-size:22px;display:block;line-height:1.15;font-weight:700}
+.telefono .portada small{opacity:.9;font-size:12px}
+.telefono .wa{margin-top:14px;display:inline-block;background:#25D366;color:#fff;font-size:12px;font-weight:600;padding:8px 14px;border-radius:999px}
+.telefono .bloques{padding:16px;display:grid;gap:10px}
+.telefono .bloques div{background:#EEF7F7;border-radius:12px;padding:12px;font-size:12px;color:#164B50}
+.telefono .bloques div b{display:block;font-size:13px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:36px}}
+
+.datos{background:var(--verde);color:var(--crema)}
+.datos .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px}
+.datos b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:#E2C58E;line-height:1.1;font-variant-numeric:lining-nums}
+.datos span{font-size:14px;opacity:.9}
+@media(max-width:760px){.datos .wrap{grid-template-columns:repeat(2,1fr)}}
+
+.muestras{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.muestra{background:#fff;border:1px solid var(--linea);border-radius:20px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.muestra:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(31,58,51,.12)}
+.muestra .vista{height:190px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.muestra .vista b{font-size:24px;line-height:1.1}
+.muestra .vista small{opacity:.9;font-size:13px}
+.muestra .info{padding:16px 18px 20px}
+.muestra h3{font-family:Montserrat,sans-serif;font-size:16px;font-weight:600}
+.muestra p{margin:4px 0 10px;color:var(--suave);font-size:14px}
+.muestra .ver{font-size:14px;font-weight:600;color:var(--oro)}
+@media(max-width:860px){.muestras{grid-template-columns:1fr}}
+
+.proceso{background:var(--crema2)}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:p}
+.paso{background:var(--crema);border-radius:18px;padding:24px;border:1px solid var(--linea)}
+.paso::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--verde);color:var(--crema);font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:14px}
+.paso h3{font-size:24px;margin-bottom:6px}
+.paso p{margin:0;color:var(--suave);font-size:15px}
+@media(max-width:900px){.pasos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+
+.precios{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px;position:relative}
+.plan.dest{border:2px solid var(--verde);box-shadow:0 14px 34px rgba(31,58,51,.12)}
+.plan .tag{position:absolute;top:-12px;left:24px;background:var(--verde);color:var(--crema);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:26px}
+.plan .precio{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--verde);line-height:1;font-variant-numeric:lining-nums tabular-nums;margin-top:4px}
+.plan .iva{font-size:13px;color:var(--suave)}
+.plan ul{list-style:none;padding:0;margin:10px 0 0;font-size:14px;display:grid;gap:6px;border-top:1px solid var(--crema2);padding-top:12px}
+.plan li::before{content:"✓ ";color:var(--oro);font-weight:700}
+.plan .entrega{margin-top:auto;padding-top:12px;font-size:13px;font-weight:600;color:var(--verde2)}
+@media(max-width:1000px){.precios{grid-template-columns:repeat(2,1fr);gap:26px}}
+@media(max-width:560px){.precios{grid-template-columns:1fr}}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.extra{background:var(--crema);border:1px solid var(--linea);border-radius:16px;padding:18px}
+.extra b{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--verde)}
+.extra .monto{font-weight:600;color:var(--oro);font-size:15px}
+.extra p{margin:4px 0 0;font-size:14px;color:var(--suave)}
+@media(max-width:860px){.extras{grid-template-columns:1fr}}
+.garantia-precio{margin:22px 0 0;font-weight:600;color:var(--verde);font-size:15px}
+.letra{font-size:13px;color:var(--suave);margin:10px 0 0;max-width:820px}
+
+.combo{background:var(--verde);color:var(--crema)}
+.combo .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.combo h2{color:var(--crema);font-size:clamp(32px,4.5vw,46px);margin:10px 0 14px}
+.combo p{opacity:.92;font-size:17px;margin:0 0 14px}
+.combo .btn{background:#E2C58E;color:var(--verde)}
+.combo .btn:hover{background:#ecd3a3}
+.aroma{justify-self:center;position:relative;width:220px;height:300px}
+.aroma .hilo{position:absolute;left:50%;top:0;width:2px;height:60px;background:#E2C58E}
+.aroma .pieza{position:absolute;top:56px;left:10px;width:200px;height:230px;border-radius:46% 46% 40% 40%;background:var(--crema);display:grid;place-items:center;text-align:center;color:var(--verde);padding:20px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.aroma .pieza small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-top:6px}
+.qr{width:96px;height:96px;margin:0 auto;background:
+ conic-gradient(from 90deg at 30% 30%,var(--verde) 25%,transparent 0) 0 0/24px 24px,
+ repeating-linear-gradient(45deg,var(--verde) 0 4px,transparent 4px 9px);border:6px solid var(--verde);border-radius:6px}
+@media(max-width:860px){.combo .wrap{grid-template-columns:1fr}}
+
+.cotizar{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.cotizar .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.cotizar ul{padding-left:18px;color:var(--suave)}
+.cotizar li{margin:6px 0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--crema);border:1px solid var(--linea);border-radius:20px;padding:24px}
+form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--verde);min-width:0}
+form .full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:15px;font-weight:400;color:var(--texto);background:#fff;border:1.5px solid var(--linea);border-radius:10px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--oro);outline-offset:1px;border-color:var(--oro)}
+form .botones{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+form .nota{grid-column:1/-1;font-size:13px;color:var(--suave);margin:0}
+@media(max-width:860px){.cotizar .wrap{grid-template-columns:1fr}}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--linea);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--verde);font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--oro)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:10px 0 0;color:var(--suave)}
+footer{background:#172C26;color:rgba(246,243,236,.7);font-size:13px;padding:22px 0;text-align:center}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.flotante svg{width:30px;height:30px;fill:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.giros{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.giro{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:20px}
+.giro h3{font-family:Montserrat,sans-serif;font-size:16px;font-weight:600}
+.giro p{margin:6px 0 0;color:var(--suave);font-size:14px}
+@media(max-width:860px){.giros{grid-template-columns:1fr}}
+.precios.tres{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.precios.tres{grid-template-columns:1fr}}
+.chat{padding:14px;display:flex;flex-direction:column;gap:8px;background:#ECE5DA;flex:1}
+.chat p{margin:0;max-width:85%;padding:8px 11px;border-radius:12px;font-size:12px;line-height:1.4}
+.chat .yo{align-self:flex-end;background:#D7F5C6;color:#1d3b23}
+.chat .bot{align-self:flex-start;background:#fff;color:#24312D}
+.chat .bot b{display:block;font-size:11px;color:#0E7C86}
+.foto{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;flex:1;align-content:start}
+.foto div{border-radius:14px;aspect-ratio:1;display:grid;place-items:center;font-size:11px;font-weight:600;text-align:center;padding:8px}
+.foto .antes{background:repeating-linear-gradient(45deg,#cfc6b5 0 8px,#bdb3a0 8px 16px);color:#4a4337}
+.foto .despues{background:#fff;border:1px solid #e6e1d6;color:#24312D}
+.foto .amb{background:linear-gradient(160deg,#E2C58E,#B48A45);color:#fff}
+.foto .det{background:linear-gradient(160deg,#2C5047,#1F3A33);color:#fff}
+.foto span{grid-column:1/-1;font-size:12px;color:var(--suave);text-align:center}
+.ficha{padding:14px;display:grid;gap:10px}
+.ficha .img{height:150px;border-radius:12px;background:#fff;border:1px solid #e6e1d6;display:grid;place-items:center;font-size:40px}
+.ficha b{font-size:14px;line-height:1.3}
+.ficha .pr{font-size:22px;font-weight:600;color:#24312D}
+.ficha .env{font-size:12px;color:#00A650;font-weight:600}
+.ficha .est{font-size:12px;color:#5E6B66}
+.ficha .comprar{background:#3483FA;color:#fff;text-align:center;border-radius:8px;padding:9px;font-size:13px;font-weight:600}
+.mapa{flex:1;display:flex;flex-direction:column}
+.mapa .plano{height:170px;background:linear-gradient(90deg,transparent 48%,#fff 48% 52%,transparent 52%),linear-gradient(0deg,transparent 45%,#fff 45% 50%,transparent 50%),#DDE9D8;position:relative}
+.mapa .pin{position:absolute;left:46%;top:30%;width:28px;height:28px;border-radius:50% 50% 50% 0;background:#EA4335;transform:rotate(-45deg)}
+.mapa .tarjeta{padding:14px;display:grid;gap:6px;font-size:12px}
+.mapa .tarjeta b{font-size:16px}
+.mapa .estrellas{color:#F4B400;font-size:14px}
+.mapa .botones{display:flex;gap:6px;flex-wrap:wrap}
+.mapa .botones span{border:1px solid #c9d6e6;color:#1a73e8;border-radius:999px;padding:5px 10px;font-weight:600}
+.aviso{background:var(--crema2);border-left:4px solid var(--oro);border-radius:10px;padding:14px 16px;margin-top:22px;font-size:14px;color:var(--texto);max-width:820px}
+.otros{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.otros a{font-size:14px;font-weight:600;color:var(--verde);text-decoration:none;border:1.5px solid var(--linea);border-radius:999px;padding:7px 14px;background:#fff}
+.otros a:hover{border-color:var(--oro)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Céfiro Bots, inicio"><img src="../logo.png" alt="Céfiro"><span>Bots de WhatsApp</span></a>
+    <nav>
+      <a href="#para-quien">Para quién</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#precios">Precios</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="../servicios-digitales/">Servicios</a>
+      <a class="btn" href="#cotizar">Cotizar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Céfiro Bots</div>
+      <h1>Que tu WhatsApp conteste, venda y agende aunque estés ocupado.</h1>
+      <p>Dejamos tu WhatsApp Business listo para vender: catálogo, respuestas automáticas y un asistente que contesta precios, horarios y pedidos a cualquier hora. Tú solo entras cuando el cliente ya quiere comprar.</p>
+      <div class="acciones">
+        <a class="btn" href="#cotizar">Quiero mi asistente</a>
+        <a class="btn sec" href="#precios">Ver precios</a>
+      </div>
+      <div class="garantia"><span>Listo en 3 a 10 días</span><span>Contesta 24/7</span><span>Te pasa la plática cuando hace falta</span></div>
+    </div>
+    <div class="telefono" aria-hidden="true">
+      <div class="pantalla">
+        <div class="barra"><i></i></div>
+        <div class="chat">
+          <p class="yo">Hola, ¿cuánto cuesta el lavado completo? ¿Abren hoy?</p>
+          <p class="bot"><b>Autolavado Brisa</b>¡Hola! El lavado completo cuesta $180 y hoy abrimos hasta las 7:00 p. m. ¿Te aparto un lugar?</p>
+          <p class="yo">Sí, a las 5</p>
+          <p class="bot"><b>Autolavado Brisa</b>Listo, quedó tu cita a las 5:00 p. m. Te mando la ubicación 📍</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="datos">
+  <div class="wrap">
+    <div><b>87%</b><span>de quienes usan internet en México usan WhatsApp</span></div>
+    <div><b>24/7</b><span>respuestas aunque tu negocio esté cerrado</span></div>
+    <div><b>Desde $1,900 <small style="font-size:.5em;font-family:Montserrat,sans-serif">+ IVA</small></b><span>WhatsApp Business listo para vender</span></div>
+    <div><b>Todo México</b><span>y negocios hispanos en EE. UU.</span></div>
+  </div>
+</div>
+
+<section id="para-quien">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Para quién es</div>
+      <h2>Para negocios que reciben muchas preguntas por WhatsApp</h2>
+      <p>Si contestas lo mismo veinte veces al día, o pierdes clientes porque no alcanzas a responder, esto es para ti.</p>
+    </div>
+    <div class="giros">
+      <div class="giro"><h3>Restaurantes y comida</h3><p>Menú, precios y pedidos para llevar sin comisiones de apps.</p></div>
+      <div class="giro"><h3>Consultorios y estéticas</h3><p>Citas, recordatorios y respuestas sobre servicios y precios.</p></div>
+      <div class="giro"><h3>Talleres, llanteras y autolavados</h3><p>Cotizaciones rápidas, horarios y citas de servicio.</p></div>
+      <div class="giro"><h3>Tiendas y boutiques</h3><p>Catálogo con fotos, apartados y avisos de producto nuevo.</p></div>
+      <div class="giro"><h3>Inmobiliarias</h3><p>Filtra prospectos: zona, presupuesto y tipo de propiedad antes de que hables con ellos.</p></div>
+      <div class="giro"><h3>Escuelas, gimnasios y academias</h3><p>Informes, horarios, inscripciones y recordatorios de pago.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso" class="proceso">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2>Tu asistente funcionando en cuatro pasos</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso"><h3>Nos cuentas</h3><p>Llenas un cuestionario con las preguntas que más te hacen, tus precios, horarios y productos.</p></div>
+      <div class="paso"><h3>Lo armamos</h3><p>Escribimos las respuestas, el catálogo y el flujo de pedidos o citas con el tono de tu negocio.</p></div>
+      <div class="paso"><h3>Lo probamos</h3><p>Lo dejamos conectado a tu WhatsApp y lo probamos contigo antes de abrirlo a clientes.</p></div>
+      <div class="paso"><h3>Lo mejoramos</h3><p>Con el plan mensual revisamos las pláticas, agregamos respuestas y ajustamos lo que no funcionó.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Precios</div>
+      <h2>Precio fijo, sin sorpresas</h2>
+      <p>Pagas la instalación una vez. Los planes con asistente llevan una mensualidad que cubre ajustes y nuevas respuestas.</p>
+    </div>
+    <div class="precios tres">
+      <div class="plan"><h3>WhatsApp en Orden</h3><span class="precio">$1,900</span><span class="iva">MXN + IVA, pago único</span>
+        <ul><li>Perfil de empresa completo</li><li>Catálogo de hasta 30 productos o servicios</li><li>Mensaje de bienvenida y de ausencia</li><li>15 respuestas rápidas</li><li>Etiquetas para ordenar clientes</li><li>Enlace y código QR de tu WhatsApp</li></ul>
+        <span class="entrega">Listo en 3 días hábiles</span></div>
+      <div class="plan dest"><span class="tag">Más pedido</span><h3>Asistente 24/7</h3><span class="precio">$4,900</span><span class="iva">MXN + IVA de instalación + $690 al mes</span>
+        <ul><li>Contesta precios, horarios y ubicación</li><li>Toma pedidos o agenda citas y te avisa</li><li>Te pasa la plática cuando el cliente lo pide</li><li>Hasta 60 preguntas entrenadas</li><li>Todo lo de WhatsApp en Orden</li></ul>
+        <span class="entrega">Listo en 7 días hábiles</span></div>
+      <div class="plan"><h3>Asistente Ventas</h3><span class="precio">$8,900</span><span class="iva">MXN + IVA de instalación + $1,290 al mes</span>
+        <ul><li>Mensajes a tu lista de clientes con plantillas aprobadas</li><li>Seguimiento a quien preguntó y no compró</li><li>Conexión con tu página web y Google Maps</li><li>Reporte mensual de pláticas y ventas</li><li>Todo lo de Asistente 24/7</li></ul>
+        <span class="entrega">Listo en 10 días hábiles</span></div>
+    </div>
+    <p class="garantia-precio">Pagas 50% de anticipo para iniciar y 50% cuando recibes tu trabajo. En las mensualidades, 50% al inicio del mes y 50% al cierre.</p>
+    <p class="letra">Precios en pesos mexicanos, más IVA (16%). En los planes con asistente, el servicio de mensajes de WhatsApp (Meta) y la plataforma del asistente se contratan a nombre de tu negocio y se pagan aparte; te decimos cuánto cuesta antes de empezar. El plan WhatsApp en Orden no tiene ningún costo extra. Sin plazo forzoso: cancelas la mensualidad con 30 días de aviso.</p>
+    
+  </div>
+</section>
+
+<section class="combo">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Solo con Céfiro</div>
+      <h2>El aromatizante que abre tu WhatsApp</h2>
+      <p>Si regalas aromatizantes Céfiro a tus clientes, ponemos en el reverso un código QR que abre tu WhatsApp con un mensaje listo. Tu asistente le contesta al instante.</p><p><b>Combo:</b> con un pedido de aromatizantes de 5,000 piezas o más, WhatsApp en Orden a mitad de precio: $950 + IVA.</p>
+      <a class="btn" href="#cotizar">Quiero el combo</a>
+    </div>
+    <div class="aroma" aria-hidden="true"><span class="hilo"></span><div class="pieza"><div><div class="qr"></div><small>Escanea y escríbenos</small></div></div></div>
+  </div>
+</section>
+
+<section id="cotizar" class="cotizar">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Cotiza en un minuto</div>
+      <h2>Cuéntanos de tu negocio</h2>
+      <p>Llena estos datos y se abre WhatsApp con el mensaje listo. Te respondemos con la propuesta y lo que necesitamos para empezar.</p>
+      <ul>
+        <li>No necesitas saber de tecnología: nosotros lo configuramos.</li>
+        <li>Usamos tu WhatsApp actual siempre que se pueda.</li>
+        <li>Tú apruebas cada respuesta antes de activarla.</li>
+        <li>Las llamadas y videollamadas son de lunes a viernes después de las 5:00 p. m. o en sábado.</li>
+      </ul>
+    </div>
+    <form id="form-cotizar" novalidate>
+      <label>Tu nombre<input id="c-nombre" autocomplete="name" required></label>
+      <label>Negocio<input id="c-empresa" autocomplete="organization" required></label>
+      <label>Giro<input id="c-giro" placeholder="Ej. restaurante, consultorio, tienda"></label>
+      <label>Paquete
+        <select id="c-paquete"><option>WhatsApp en Orden</option><option selected>Asistente 24/7</option><option>Asistente Ventas</option><option>Todavía no sé</option></select>
+      </label>
+      <label>Ciudad<input id="c-ciudad" autocomplete="address-level2" placeholder="Ej. Monterrey, CDMX, Houston"></label>
+      <label>¿Cuántos mensajes recibes al día?<input id="c-extra" placeholder="Ej. 20, 50, más de 100"></label>
+      <label class="full">Algo más (opcional)<textarea id="c-notas" rows="3"></textarea></label>
+      <div class="botones">
+        <button class="btn" type="submit">Enviar por WhatsApp</button>
+        <button class="btn sec" type="button" id="c-correo">Enviar por correo</button>
+      </div>
+      <p class="nota" id="c-nota">Al enviar se abre WhatsApp con tu mensaje.</p>
+    </form>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="wrap">
+    <div class="titulo">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Tengo que cambiar de número?</summary><p>Casi nunca. El plan WhatsApp en Orden usa tu mismo número con la app gratuita de WhatsApp Business. Para el asistente revisamos contigo si conviene tu número actual o uno nuevo, antes de cobrar nada.</p></details>
+      <details><summary>¿El asistente puede inventar respuestas?</summary><p>Solo contesta con la información que tú apruebas. Si le preguntan algo que no sabe, te pasa la plática y te avisa.</p></details>
+      <details><summary>¿Cuánto tarda?</summary><p>WhatsApp en Orden queda en 3 días hábiles, el Asistente 24/7 en 7 y el Asistente Ventas en 10, contando desde que recibimos tu información y el anticipo.</p></details>
+      <details><summary>¿Puedo mandar promociones a todos mis clientes?</summary><p>Sí, con el plan Asistente Ventas, usando plantillas aprobadas por WhatsApp y solo a clientes que te dieron su número. Así no te bloquean el número.</p></details>
+      <details><summary>¿Puedo cancelar?</summary><p>Sí. No hay plazo forzoso: avisas con 30 días y te entregamos tus respuestas y tu catálogo.</p></details>
+      <details><summary>¿Cómo se paga?</summary><p>50% de anticipo para iniciar y 50% cuando recibes tu trabajo, por transferencia o SPEI. En los planes con mensualidad, cada mes se paga igual: 50% al inicio y 50% al cierre. Los precios son en pesos mexicanos más IVA.</p></details>
+      <details><summary>¿Atienden en mi ciudad?</summary><p>Sí. Atendemos todo en línea a negocios de cualquier ciudad de México: Monterrey, Ciudad de México, Guadalajara, Tijuana, Saltillo, Querétaro, Puebla, León, Mérida, Hermosillo, Chihuahua, Culiacán, Cancún y donde estés. También a negocios hispanos en Estados Unidos, en español o inglés; para ellos cotizamos en dólares y sin IVA mexicano.</p></details>
+    </div>
+    <div class="titulo" style="margin:40px 0 0">
+      <div class="eyebrow">Otros servicios Céfiro</div>
+      <div class="otros"><a href="../fotos-producto/">Céfiro Fotos</a><a href="../mercado-libre/">Céfiro Marketplace</a><a href="../google-maps/">Céfiro Maps</a><a href="../paginas-web/">Céfiro Páginas Web</a><a href="../redes.html">Céfiro Redes</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Céfiro Bots · Hecho en Sonora, México, para todo México · <a href="../servicios-digitales/">Servicios digitales Céfiro</a> · <a href="../">Aromatizantes Céfiro</a> · <a href="https://www.instagram.com/cefiromx/" target="_blank" rel="noopener">Instagram</a></footer>
+
+<a class="flotante" href="https://wa.me/526444624188?text=Hola%2C%20me%20interesa%20un%20asistente%20de%20WhatsApp%20para%20mi%20negocio." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></a>
+
+<script>
+const f = document.getElementById("form-cotizar");
+const v = id => document.getElementById(id).value.trim();
+function mensaje() {
+  const l = ["Hola, me interesa un asistente de WhatsApp para mi negocio."];
+  if (v("c-nombre")) l.push("Nombre: " + v("c-nombre"));
+  if (v("c-empresa")) l.push("Negocio: " + v("c-empresa"));
+  if (v("c-giro")) l.push("Giro: " + v("c-giro"));
+  l.push("Paquete: " + v("c-paquete"));
+  if (v("c-ciudad")) l.push("Ciudad: " + v("c-ciudad"));
+  if (v("c-extra")) l.push("¿Cuántos mensajes recibes al día?: " + v("c-extra"));
+  if (v("c-notas")) l.push("Notas: " + v("c-notas"));
+  return l.join("\n");
+}
+function valido() {
+  const falta = ["c-nombre","c-empresa"].filter(id => !v(id));
+  const nota = document.getElementById("c-nota");
+  if (falta.length) { nota.textContent = "Escribe tu nombre y el de tu negocio para enviar."; document.getElementById(falta[0]).focus(); return false; }
+  nota.textContent = "Al enviar se abre WhatsApp con tu mensaje.";
+  return true;
+}
+f.addEventListener("submit", e => {
+  e.preventDefault(); if (!valido()) return;
+  window.open("https://wa.me/526444624188?text=" + encodeURIComponent(mensaje()), "_blank", "noopener");
+});
+document.getElementById("c-correo").addEventListener("click", () => {
+  if (!valido()) return;
+  location.href = "mailto:davidbalont8@gmail.com?subject=" + encodeURIComponent("Cotización Céfiro Bots") + "&body=" + encodeURIComponent(mensaje());
+});
+</script>
+</body>
+</html>
