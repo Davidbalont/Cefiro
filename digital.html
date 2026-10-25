@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Céfiro Digital · Plantillas y kits para tu negocio</title>
-<meta name="description" content="Plantillas de Excel, kits de publicaciones editables y guías para pymes de México, Estados Unidos y Latinoamérica. Cotizador, inventario, calendario de contenido 2027 y más. Descarga inmediata.">
+<meta name="description" content="Plantillas de Excel, kits de publicaciones editables y guías para pymes de México, Estados Unidos y Latinoamérica. Cotizador, inventario, calendario de contenido 2027 y más. Archivos listos para usar.">
 <link rel="canonical" href="https://davidbalont.github.io/Cefiro/digital.html">
 <meta property="og:title" content="Céfiro Digital · Plantillas y kits para tu negocio">
-<meta property="og:description" content="Cotizador, inventario, calendario 2027, kits para redes y guías. Descarga inmediata.">
+<meta property="og:description" content="Cotizador, inventario, calendario 2027, kits para redes y guías. Archivos listos para usar.">
 <meta property="og:image" content="https://davidbalont.github.io/Cefiro/digital/cotizador.jpg">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
@@ -150,7 +150,7 @@ footer a{color:#E2C58E}
 <section class="hero" style="padding-bottom:20px"><div class="wrap" style="display:block">
   <span class="eyebrow">Céfiro Digital</span>
   <h1>Herramientas listas para tu negocio</h1>
-  <p>Plantillas, kits de publicaciones y guías que hicimos para nuestro propio negocio. Descarga inmediata, para México, Estados Unidos y Latinoamérica.</p>
+  <p>Plantillas, kits de publicaciones y guías que hicimos para nuestro propio negocio. Archivos listos para usar, para México, Estados Unidos y Latinoamérica.</p>
 </div></section>
 
 <section id="productos" style="padding-top:20px"><div class="wrap">
@@ -178,7 +178,7 @@ footer a{color:#E2C58E}
 
 <section><div class="wrap">
   <div class="titulo"><span class="eyebrow">Preguntas</span><h2>Cómo funciona</h2></div>
-  <details><summary>¿Cómo recibo el archivo?</summary><p>Al pagar, te llega el enlace de descarga a tu correo en ese momento. Si compras por WhatsApp, te lo mandamos por ahí mismo.</p></details>
+  <details><summary>¿Cómo recibo el archivo?</summary><p>Por ahora la compra es por WhatsApp: al confirmar tu pago te mandamos el archivo por ahí mismo o a tu correo, como prefieras.</p></details>
   <details><summary>¿Necesito Excel?</summary><p>No. Las plantillas funcionan en Excel, en Google Sheets (gratis) y en LibreOffice. Los kits se editan en Canva, PowerPoint o Google Slides.</p></details>
   <details><summary>¿Sirve si mi negocio está en Estados Unidos o en otro país?</summary><p>Sí. En el cotizador cambias el nombre del impuesto, la tasa y la moneda. El calendario trae fechas de México y de Estados Unidos, y hay versiones en inglés.</p></details>
   <details><summary>¿Puedo compartir o revender las plantillas?</summary><p>Son para usarse en un negocio. No se permite revenderlas ni compartirlas.</p></details>
@@ -202,7 +202,7 @@ var PAGO = {
 document.querySelectorAll(".comprar").forEach(function(b){
   var url = PAGO[b.dataset.id];
   if (url) { b.href = url; }
-  else { b.href = "https://wa.me/526444624188?text=" + encodeURIComponent("Hola, quiero comprar: " + b.dataset.nombre + " (" + b.dataset.precio + ")"); }
+  else { b.href = "https://wa.me/526444624188?text=" + encodeURIComponent((b.closest("#english") ? "Hi, I would like to buy: " : "Hola, quiero comprar: ") + b.dataset.nombre + " (" + b.dataset.precio + ")"); }
   b.target = "_blank"; b.rel = "noopener";
 });
 </script>

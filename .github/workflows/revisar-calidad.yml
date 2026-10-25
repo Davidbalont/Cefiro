@@ -1,0 +1,19 @@
+name: Revisar calidad
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 14 * * 1" # lunes ~7:00 am en Sonora (UTC-7)
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar lector de PDF
+        run: sudo apt-get install -y poppler-utils
+      - name: Revisar reglas, precios y enlaces
+        run: python3 calidad/revisar.py
