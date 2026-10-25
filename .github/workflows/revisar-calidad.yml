@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Instalar lector de PDF
-        run: sudo apt-get install -y poppler-utils
+        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
       - name: Revisar reglas, precios y enlaces
         run: python3 calidad/revisar.py
