@@ -9,6 +9,8 @@
 <meta property="og:title" content="Tienda Céfiro · Aromatizantes para auto">
 <meta property="og:description" content="Paquetes de 3, 6, 12 y 24 aromatizantes. 8 aromas. Pide por WhatsApp.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://davidbalont.github.io/Cefiro/tienda/pack-12.jpg">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Product", "name": "Aromatizante para auto Céfiro · Prueba (3 piezas)", "image": "https://davidbalont.github.io/Cefiro/tienda/pack-3.jpg", "brand": {"@type": "Brand", "name": "Céfiro"}, "description": "3 aromatizantes colgantes para auto, hechos en Sonora, cada uno en bolsa transparente sellada. Aromas: Chicle, Fresa, Vainilla, Coco, Manzana-canela, New Car, Blue Ice y Gold.", "offers": {"@type": "Offer", "price": "99", "priceCurrency": "MXN", "availability": "https://schema.org/InStock", "url": "https://davidbalont.github.io/Cefiro/tienda.html#paquetes"}}, {"@context": "https://schema.org", "@type": "Product", "name": "Aromatizante para auto Céfiro · Pack 6 (6 piezas)", "image": "https://davidbalont.github.io/Cefiro/tienda/pack-6.jpg", "brand": {"@type": "Brand", "name": "Céfiro"}, "description": "6 aromatizantes colgantes para auto, hechos en Sonora, cada uno en bolsa transparente sellada. Aromas: Chicle, Fresa, Vainilla, Coco, Manzana-canela, New Car, Blue Ice y Gold.", "offers": {"@type": "Offer", "price": "149", "priceCurrency": "MXN", "availability": "https://schema.org/InStock", "url": "https://davidbalont.github.io/Cefiro/tienda.html#paquetes"}}, {"@context": "https://schema.org", "@type": "Product", "name": "Aromatizante para auto Céfiro · Pack 12 (12 piezas)", "image": "https://davidbalont.github.io/Cefiro/tienda/pack-12.jpg", "brand": {"@type": "Brand", "name": "Céfiro"}, "description": "12 aromatizantes colgantes para auto, hechos en Sonora, cada uno en bolsa transparente sellada. Aromas: Chicle, Fresa, Vainilla, Coco, Manzana-canela, New Car, Blue Ice y Gold.", "offers": {"@type": "Offer", "price": "249", "priceCurrency": "MXN", "availability": "https://schema.org/InStock", "url": "https://davidbalont.github.io/Cefiro/tienda.html#paquetes"}}, {"@context": "https://schema.org", "@type": "Product", "name": "Aromatizante para auto Céfiro · Pack 24 (24 piezas)", "image": "https://davidbalont.github.io/Cefiro/tienda/pack-24.jpg", "brand": {"@type": "Brand", "name": "Céfiro"}, "description": "24 aromatizantes colgantes para auto, hechos en Sonora, cada uno en bolsa transparente sellada. Aromas: Chicle, Fresa, Vainilla, Coco, Manzana-canela, New Car, Blue Ice y Gold.", "offers": {"@type": "Offer", "price": "449", "priceCurrency": "MXN", "availability": "https://schema.org/InStock", "url": "https://davidbalont.github.io/Cefiro/tienda.html#paquetes"}}, {"@context": "https://schema.org", "@type": "Product", "name": "Aromatizante para auto Céfiro · Pack Navidad (12 piezas)", "image": "https://davidbalont.github.io/Cefiro/tienda/pack-navidad.jpg", "brand": {"@type": "Brand", "name": "Céfiro"}, "description": "12 aromatizantes colgantes para auto, hechos en Sonora, cada uno en bolsa transparente sellada. Aromas: Chicle, Fresa, Vainilla, Coco, Manzana-canela, New Car, Blue Ice y Gold.", "offers": {"@type": "Offer", "price": "249", "priceCurrency": "MXN", "availability": "https://schema.org/InStock", "url": "https://davidbalont.github.io/Cefiro/tienda.html#paquetes"}}]</script>
 <meta property="og:locale" content="es_MX">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +58,8 @@ section{padding:72px 0}
 .titulo h2{font-size:clamp(30px,4.5vw,44px);margin:10px 0 12px}
 .titulo p{color:var(--suave);margin:0;font-size:17px}
 
-.paquetes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media(max-width:980px){.paquetes{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.paquetes{grid-template-columns:1fr}}
+.paquetes{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.paquete img{width:100%;height:auto;aspect-ratio:1;border-radius:12px;margin:-6px 0 12px;border:1px solid var(--crema2)}
 .paquete{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px;display:flex;flex-direction:column;position:relative}
 .paquete.destacado{border:2px solid var(--oro)}
 .paquete .sello{position:absolute;top:-12px;left:22px;background:var(--oro);color:#fff;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
@@ -259,10 +260,11 @@ var AROMAS = [
   {nombre: "Gold", nota: "Elegante e intenso", color: "#B48A45"}
 ];
 var PAQUETES = [
-  {id: "p3", nombre: "Prueba", piezas: 3, precio: 99, para: "Para conocer los aromas o probar antes de pedir más.", extras: ["3 aromas a elegir", "Ideal para regalo"]},
-  {id: "p6", nombre: "Pack 6", piezas: 6, precio: 149, para: "Para tu auto por varios meses.", extras: ["Mezcla de aromas", "Rinde de 3 a 6 meses"]},
-  {id: "p12", nombre: "Pack 12", piezas: 12, precio: 249, para: "Para la familia o para intercambio de regalos.", extras: ["Mezcla de aromas", "Para varios autos"], destacado: "Más pedido"},
-  {id: "p24", nombre: "Pack 24", piezas: 24, precio: 449, para: "Para conductores, autolavados y reventa.", extras: ["Mezcla de aromas", "Envío gratis a todo México"]}
+  {id: "p3", img: "pack-3", nombre: "Prueba", piezas: 3, precio: 99, para: "Para conocer los aromas o probar antes de pedir más.", extras: ["3 aromas a elegir", "Ideal para regalo"]},
+  {id: "p6", img: "pack-6", nombre: "Pack 6", piezas: 6, precio: 149, para: "Para tu auto por varios meses.", extras: ["Mezcla de aromas", "Rinde de 3 a 6 meses"]},
+  {id: "p12", img: "pack-12", nombre: "Pack 12", piezas: 12, precio: 249, para: "Para la familia o para intercambio de regalos.", extras: ["Mezcla de aromas", "Para varios autos"], destacado: "Más pedido"},
+  {id: "p24", img: "pack-24", nombre: "Pack 24", piezas: 24, precio: 449, para: "Para conductores, autolavados y reventa.", extras: ["Mezcla de aromas", "Envío gratis a todo México"]},
+  {id: "pnav", img: "pack-navidad", nombre: "Pack Navidad", piezas: 12, precio: 249, para: "Para el intercambio, la oficina o el regalo de fin de año.", extras: ["Manzana-canela, Vainilla, Coco y Gold", "Listo para regalar"], destacado: "Temporada"}
 ];
 var carrito = {}, elegidos = [];
 function pesos(n){ return "$" + n.toLocaleString("es-MX", {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2}); }
@@ -285,6 +287,7 @@ document.getElementById("muestras").innerHTML = AROMAS.map(function(a){ return p
 document.getElementById("lista-paquetes").innerHTML = PAQUETES.map(function(p){
   return '<div class="paquete' + (p.destacado ? ' destacado' : '') + '">' +
     (p.destacado ? '<span class="sello">' + p.destacado + '</span>' : '') +
+    '<img src="tienda/' + p.img + '.jpg" alt="' + p.nombre + ' de aromatizantes Céfiro" loading="lazy" width="600" height="600">' +
     '<h3>' + p.nombre + '</h3><div class="para">' + p.para + '</div>' +
     '<div class="precio">' + pesos(p.precio) + '</div>' +
     '<div class="unidad">' + p.piezas + ' piezas · ' + pesos(Math.round(p.precio / p.piezas * 100) / 100) + ' cada una</div>' +
