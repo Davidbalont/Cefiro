@@ -1,0 +1,58 @@
+name: Conectar TikTok
+on:
+  workflow_dispatch:
+    inputs:
+      canal:
+        description: "Canal"
+        type: choice
+        options: [yesoporque, butwhy, cofre, lana, mapeando]
+      codigo:
+        description: "Código que mostró la página canales/tiktok.html"
+        required: true
+permissions:
+  contents: read
+jobs:
+  conectar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cambiar el código por el permiso y guardarlo como secreto
+        env:
+          CODIGO: ${{ inputs.codigo }}
+          CANAL: ${{ inputs.canal }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+        run: |
+          pip install -q pynacl
+          python3 - <<'PY'
+          import base64, json, os, urllib.parse, urllib.request
+          from nacl import encoding, public
+          e = os.environ
+          for k in ("TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET", "GH_ADMIN_TOKEN"):
+              if not e.get(k):
+                  raise SystemExit(f"Falta el secreto {k} (ver canales/README.md)")
+          repo = e["GITHUB_REPOSITORY"]
+          regreso = f"https://{repo.split('/')[0].lower()}.github.io/{repo.split('/')[1]}/canales/tiktok.html"
+          datos = urllib.parse.urlencode({"client_key": e["TIKTOK_CLIENT_KEY"], "client_secret": e["TIKTOK_CLIENT_SECRET"],
+              "code": e["CODIGO"].strip(), "grant_type": "authorization_code", "redirect_uri": regreso}).encode()
+          r = json.load(urllib.request.urlopen(urllib.request.Request("https://open.tiktokapis.com/v2/oauth/token/", data=datos,
+              headers={"Content-Type": "application/x-www-form-urlencoded"})))
+          if "refresh_token" not in r:
+              raise SystemExit(f"TikTok no aceptó el código (puede haber caducado; vuelve a autorizar): {r.get('error_description') or r}")
+          print(f"::add-mask::{r['refresh_token']}")
+          print(f"::add-mask::{r['access_token']}")
+          yo = json.load(urllib.request.urlopen(urllib.request.Request(
+              "https://open.tiktokapis.com/v2/user/info/?fields=display_name",
+              headers={"Authorization": f"Bearer {r['access_token']}"})))
+          gh = {"Authorization": f"Bearer {e['GH_ADMIN_TOKEN']}", "Accept": "application/vnd.github+json"}
+          llave = json.load(urllib.request.urlopen(urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/actions/secrets/public-key", headers=gh)))
+          caja = public.SealedBox(public.PublicKey(llave["key"].encode(), encoding.Base64Encoder()))
+          cifrado = base64.b64encode(caja.encrypt(r["refresh_token"].encode())).decode()
+          nombre = f"TIKTOK_REFRESH_{e['CANAL'].upper()}"
+          urllib.request.urlopen(urllib.request.Request(f"https://api.github.com/repos/{repo}/actions/secrets/{nombre}",
+              data=json.dumps({"encrypted_value": cifrado, "key_id": llave["key_id"]}).encode(), method="PUT",
+              headers={**gh, "Content-Type": "application/json"}))
+          usuario = ((yo.get("data") or {}).get("user") or {}).get("display_name", "?")
+          print(f"Listo: la cuenta «{usuario}» quedó guardada como {nombre}.")
+          PY
