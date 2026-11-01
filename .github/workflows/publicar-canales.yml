@@ -1,0 +1,36 @@
+name: Publicar canales de nicho
+on:
+  schedule:
+    - cron: "*/15 * * * *" # cada 15 minutos; publica lo aprobado cuya hora ya llegó
+  workflow_dispatch:
+    inputs:
+      prueba:
+        description: "Solo revisar los permisos de cada red, sin publicar"
+        type: boolean
+        default: true
+permissions:
+  contents: write
+concurrency:
+  group: publicar-canales
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar lo que toca
+        env:
+          SECRETOS: ${{ toJSON(secrets) }}
+          PRUEBA: ${{ github.event_name == 'workflow_dispatch' && inputs.prueba }}
+        run: python3 canales/publicar.py
+      - name: Guardar registro de publicadas
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898315+github-actions[bot]@users.noreply.github.com"
+          git add canales/publicadas.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Registro de publicaciones de los canales de nicho"
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push
+          fi

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conectar TikTok · Canales de nicho</title><meta name="robots" content="noindex"><link rel="stylesheet" href="estilo.css"></head>
+<body><main>
+<h1>Conectar una cuenta de TikTok al publicador</h1>
+<p class="suave">Haz esto una vez por cada cuenta. Antes, entra a tiktok.com en este navegador con la cuenta del canal que vas a conectar.</p>
+
+<section id="paso1">
+<h2>1. Autorizar</h2>
+<label for="clave">Client key de la app de TikTok</label>
+<input id="clave" placeholder="awxxxxxxxxxxxx">
+<label for="canal">Canal</label>
+<select id="canal">
+<option value="yesoporque">¿Y Eso Por Qué?</option>
+<option value="butwhy">But Why?</option>
+<option value="cofre">Cofre Abierto</option>
+<option value="lana">La Lana Detrás</option>
+<option value="mapeando">Mapeando México</option>
+</select>
+<button type="button" id="autorizar">Autorizar en TikTok</button>
+</section>
+
+<section id="paso2" hidden>
+<h2>2. Copia este código</h2>
+<p>Canal: <b id="canalVuelta"></b></p>
+<div class="codigo" id="codigo"></div>
+<button type="button" id="copiar">Copiar código</button>
+<p>Ahora, en GitHub: <b>Actions → Conectar TikTok → Run workflow</b>, elige el canal, pega el código y dale <b>Run workflow</b>. El código sirve solo unos minutos y una sola vez.</p>
+<a class="boton" href="https://github.com/Davidbalont/Cefiro/actions/workflows/conectar-tiktok.yml">Abrir “Conectar TikTok” en GitHub</a>
+</section>
+
+<script>
+var REGRESO = location.origin + location.pathname;
+var q = new URLSearchParams(location.search);
+var clave = document.getElementById('clave');
+try { clave.value = localStorage.getItem('tiktokClave') || ''; } catch (e) {}
+document.getElementById('autorizar').onclick = function () {
+  var k = clave.value.trim();
+  if (!k) { clave.focus(); return; }
+  try { localStorage.setItem('tiktokClave', k); } catch (e) {}
+  var url = 'https://www.tiktok.com/v2/auth/authorize/?client_key=' + encodeURIComponent(k) +
+    '&scope=' + encodeURIComponent('user.info.basic,video.publish,video.upload') +
+    '&response_type=code&redirect_uri=' + encodeURIComponent(REGRESO) +
+    '&state=' + encodeURIComponent(document.getElementById('canal').value);
+  location.href = url;
+};
+if (q.get('code')) {
+  document.getElementById('paso1').hidden = true;
+  document.getElementById('paso2').hidden = false;
+  document.getElementById('codigo').textContent = q.get('code');
+  var op = document.querySelector('#canal option[value="' + q.get('state') + '"]');
+  document.getElementById('canalVuelta').textContent = op ? op.textContent : (q.get('state') || '?');
+}
+if (q.get('error')) { alert('TikTok no autorizó: ' + q.get('error_description')); }
+document.getElementById('copiar').onclick = function () {
+  var t = document.getElementById('codigo').textContent;
+  if (navigator.clipboard) navigator.clipboard.writeText(t);
+  this.textContent = 'Copiado';
+};
+</script>
+</main></body></html>

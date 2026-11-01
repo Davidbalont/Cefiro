@@ -1,0 +1,29 @@
+{
+  "canales": {
+    "yesoporque": {
+      "nombre": "¿Y Eso Por Qué?",
+      "idioma": "es",
+      "usuario": "yesoporque.mx"
+    },
+    "butwhy": {
+      "nombre": "But Why?",
+      "idioma": "en",
+      "usuario": "butwhy.daily"
+    },
+    "cofre": {
+      "nombre": "Cofre Abierto",
+      "idioma": "es",
+      "usuario": "cofreabierto.mx"
+    },
+    "lana": {
+      "nombre": "La Lana Detrás",
+      "idioma": "es",
+      "usuario": "lalanadetras"
+    },
+    "mapeando": {
+      "nombre": "Mapeando México",
+      "idioma": "es",
+      "usuario": "mapeandomx"
+    }
+  }
+}
