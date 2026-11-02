@@ -1,0 +1,34 @@
+name: Programar TikTok (Buffer)
+on:
+  workflow_dispatch:
+    inputs:
+      solo_ver:
+        description: "Solo revisar la conexión, sin programar"
+        type: boolean
+        default: false
+  push:
+    branches: [claude/project-thread-jlswzg]
+    paths: ["canales/tiktok/cola.json", "canales/tiktok/buffer_tiktok.py", ".github/workflows/tiktok-buffer.yml"]
+  schedule:
+    - cron: "0 */6 * * *"
+permissions:
+  contents: write
+concurrency: tiktok-buffer
+jobs:
+  programar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Programar los siguientes videos
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SOLO_VER: ${{ inputs.solo_ver && '1' || '0' }}
+        run: python3 canales/tiktok/buffer_tiktok.py
+      - name: Guardar registro
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add canales/tiktok/programadas.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Registro de TikTok programados [skip ci]" && git push)
