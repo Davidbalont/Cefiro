@@ -1,62 +1,62 @@
 [
   {
     "video": "jeans.mp4",
-    "dueAt": "2026-11-03T03:00:00.000Z",
-    "cdmx": "Mon 02 Nov 21:00",
-    "buffer_id": "6ae9205e4e401f604e516089"
+    "dueAt": "2026-11-03T00:15:00.000Z",
+    "cdmx": "Mon 02 Nov 18:15",
+    "buffer_id": "6ae921239e9bda3b49d711ec"
   },
   {
     "video": "pluma.mp4",
-    "dueAt": "2026-11-03T19:00:00.000Z",
-    "cdmx": "Tue 03 Nov 13:00",
-    "buffer_id": "6ae920609e9bda3b49d6e019"
+    "dueAt": "2026-11-03T01:00:00.000Z",
+    "cdmx": "Mon 02 Nov 19:00",
+    "buffer_id": "6ae92124e697cf47b840092e"
   },
   {
     "video": "ventanas-avion.mp4",
-    "dueAt": "2026-11-04T00:00:00.000Z",
-    "cdmx": "Tue 03 Nov 18:00",
-    "buffer_id": "6ae92062967eeee46f56f5e1"
+    "dueAt": "2026-11-03T02:00:00.000Z",
+    "cdmx": "Mon 02 Nov 20:00",
+    "buffer_id": "6ae92125e697cf47b8400963"
   },
   {
     "video": "palomitas.mp4",
-    "dueAt": "2026-11-04T03:00:00.000Z",
-    "cdmx": "Tue 03 Nov 21:00",
-    "buffer_id": "6ae92065e697cf47b83fd83a"
+    "dueAt": "2026-11-03T03:00:00.000Z",
+    "cdmx": "Mon 02 Nov 21:00",
+    "buffer_id": "6ae921269e9bda3b49d7124f"
   },
   {
     "video": "hielo.mp4",
-    "dueAt": "2026-11-04T19:00:00.000Z",
-    "cdmx": "Wed 04 Nov 13:00",
-    "buffer_id": "6ae9206825014d8f3211917c"
+    "dueAt": "2026-11-03T04:00:00.000Z",
+    "cdmx": "Mon 02 Nov 22:00",
+    "buffer_id": "6ae9212725014d8f3211b457"
   },
   {
     "video": "mar.mp4",
-    "dueAt": "2026-11-05T00:00:00.000Z",
-    "cdmx": "Wed 04 Nov 18:00",
-    "buffer_id": "6ae9206be697cf47b83fda02"
+    "dueAt": "2026-11-03T17:00:00.000Z",
+    "cdmx": "Tue 03 Nov 11:00",
+    "buffer_id": "6ae92128e697cf47b84009ad"
   },
   {
     "video": "chile.mp4",
-    "dueAt": "2026-11-05T03:00:00.000Z",
-    "cdmx": "Wed 04 Nov 21:00",
-    "buffer_id": "6ae9206de697cf47b83fda5d"
+    "dueAt": "2026-11-03T19:00:00.000Z",
+    "cdmx": "Tue 03 Nov 13:00",
+    "buffer_id": "6ae921294e401f604e518ead"
   },
   {
     "video": "cebolla.mp4",
-    "dueAt": "2026-11-05T19:00:00.000Z",
-    "cdmx": "Thu 05 Nov 13:00",
-    "buffer_id": "6ae9206f25014d8f32119282"
+    "dueAt": "2026-11-03T22:00:00.000Z",
+    "cdmx": "Tue 03 Nov 16:00",
+    "buffer_id": "6ae9212a25014d8f3211b49e"
   },
   {
     "video": "semaforo.mp4",
-    "dueAt": "2026-11-06T00:00:00.000Z",
-    "cdmx": "Thu 05 Nov 18:00",
-    "buffer_id": "6ae920729e9bda3b49d6e339"
+    "dueAt": "2026-11-04T01:00:00.000Z",
+    "cdmx": "Tue 03 Nov 19:00",
+    "buffer_id": "6ae9212be697cf47b8400a49"
   },
   {
     "video": "qwerty.mp4",
-    "dueAt": "2026-11-06T03:00:00.000Z",
-    "cdmx": "Thu 05 Nov 21:00",
-    "buffer_id": "6ae92074e697cf47b83fdb24"
+    "dueAt": "2026-11-04T03:00:00.000Z",
+    "cdmx": "Tue 03 Nov 21:00",
+    "buffer_id": "6ae9212cb62d192bcc4f6cc6"
   }
 ]
