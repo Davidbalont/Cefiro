@@ -63,10 +63,10 @@ def url_publica(rel, nombre):
     return a["browser_download_url"]
 
 
-def horarios(cfg, desde):
+def horarios(cfg, desde, especiales=None):
     dia = desde.astimezone(CDMX).date()
     while True:
-        lista = cfg["fin_de_semana"] if dia.weekday() >= 5 else cfg["entre_semana"]
+        lista = (especiales or {}).get(dia.isoformat()) or (cfg["fin_de_semana"] if dia.weekday() >= 5 else cfg["entre_semana"])
         for h in lista:
             hh, mm = map(int, h.split(":"))
             t = datetime(dia.year, dia.month, dia.day, hh, mm, tzinfo=CDMX)
@@ -93,12 +93,26 @@ def main():
         return
 
     ahora = datetime.now(timezone.utc)
+    # Reprogramar: si cola.json trae un token nuevo, borra en Buffer lo pendiente y lo vuelve a acomodar.
+    token = cfg.get("reprogramar")
+    tok_path = AQUI / "reprogramado.txt"
+    if token and (not tok_path.exists() or tok_path.read_text().strip() != token):
+        quedan = []
+        for r in reg:
+            if datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) > ahora:
+                d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { __typename } }", {"i": {"id": r["buffer_id"]}})
+                print(f"↺ quitado {r['video']} ({r['cdmx']}): {d}")
+            else:
+                quedan.append(r)
+        reg = quedan
+        reg_path.write_text(json.dumps(reg, ensure_ascii=False, indent=2))
+        tok_path.write_text(token)
     hechos = {r["video"] for r in reg}
     pendientes = [r for r in reg if datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) > ahora]
     libres = cfg["max_pendientes"] - len(pendientes)
     ocupados = {r["dueAt"] for r in reg}
-    ultimo = max([datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) for r in pendientes], default=ahora + timedelta(minutes=30))
-    gen = horarios(cfg["horarios"], max(ultimo, ahora + timedelta(minutes=30)))
+    ultimo = max([datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) for r in pendientes], default=ahora + timedelta(minutes=5))
+    gen = horarios(cfg["horarios"], max(ultimo, ahora + timedelta(minutes=5)), cfg.get("dias_especiales"))
     por_hacer = [c for c in cfg["cola"] if c["video"] not in hechos][:max(libres, 0)]
     if not por_hacer:
         print(f"Nada que programar (pendientes: {len(pendientes)}, en cola sin programar: {len([c for c in cfg['cola'] if c['video'] not in hechos])})")
