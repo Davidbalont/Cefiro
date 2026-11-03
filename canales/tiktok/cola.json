@@ -21,14 +21,9 @@
   "max_pendientes": 10,
   "desde": "2026-11-03T18:00:00",
   "adelantar": {
-    "token": "2026-11-02-publicos-yt",
+    "token": "2026-11-03-semaforo-ya",
     "videos": [
-      "palomitas.mp4",
-      "hielo.mp4",
-      "mar.mp4",
-      "chile.mp4",
-      "cebolla.mp4",
-      "semaforo.mp4"
+      "semaforo-h"
     ]
   },
   "reemplazos": {
