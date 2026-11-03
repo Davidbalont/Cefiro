@@ -113,13 +113,15 @@ def main():
     ocupados = {r["dueAt"] for r in reg}
     ultimo = max([datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) for r in pendientes], default=ahora + timedelta(minutes=5))
     gen = horarios(cfg["horarios"], max(ultimo, ahora + timedelta(minutes=5)), cfg.get("dias_especiales"))
-    por_hacer = [c for c in cfg["cola"] if c["video"] not in hechos][:max(libres, 0)]
+    clave = lambda c: c.get("id", c["video"])
+    por_hacer = [c for c in cfg["cola"] if clave(c) not in hechos]
+    por_hacer = sorted(por_hacer, key=lambda c: c.get("cuando") != "ya")[:max(libres, 0)]
     if not por_hacer:
-        print(f"Nada que programar (pendientes: {len(pendientes)}, en cola sin programar: {len([c for c in cfg['cola'] if c['video'] not in hechos])})")
+        print(f"Nada que programar (pendientes: {len(pendientes)})")
         return
     rel = release()
     for c in por_hacer:
-        t = next(gen)
+        t = (ahora + timedelta(minutes=6)).astimezone(CDMX) if c.get("cuando") == "ya" else next(gen)
         due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
         if due in ocupados:
             t = next(gen); due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
@@ -131,7 +133,7 @@ def main():
         if "post" not in r:
             print(f"✗ {c['video']}: {r.get('message')}")
             break
-        reg.append({"video": c["video"], "dueAt": due, "cdmx": t.strftime("%a %d %b %H:%M"), "buffer_id": r["post"]["id"]})
+        reg.append({"video": clave(c), "dueAt": due, "cdmx": t.strftime("%a %d %b %H:%M"), "buffer_id": r["post"]["id"]})
         reg_path.write_text(json.dumps(reg, ensure_ascii=False, indent=2))
         print(f"✓ {c['video']} → {t.strftime('%a %d %b %H:%M')} CDMX")
 

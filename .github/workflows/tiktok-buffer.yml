@@ -7,8 +7,8 @@ on:
         type: boolean
         default: false
   push:
-    branches: [claude/project-thread-jlswzg]
-    paths: ["canales/tiktok/cola.json", "canales/tiktok/buffer_tiktok.py", ".github/workflows/tiktok-buffer.yml"]
+    branches: [main]
+    paths: ["canales/tiktok/cola.json", "canales/tiktok/buffer_tiktok.py"]
   schedule:
     - cron: "0 */6 * * *"
 permissions:
