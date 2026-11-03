@@ -2,6 +2,10 @@ name: Programar TikTok (Buffer)
 on:
   workflow_dispatch:
     inputs:
+      estado:
+        description: "Solo revisar el estado de los posts recientes"
+        type: boolean
+        default: false
       solo_ver:
         description: "Solo revisar la conexión, sin programar"
         type: boolean
@@ -24,6 +28,7 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SOLO_VER: ${{ inputs.solo_ver && '1' || '0' }}
+          ESTADO: ${{ inputs.estado && '1' || '0' }}
         run: python3 canales/tiktok/buffer_tiktok.py
       - name: Guardar registro
         if: always()
