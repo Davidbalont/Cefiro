@@ -1,0 +1,119 @@
+{
+  "horarios": {
+    "entre_semana": [
+      "11:00",
+      "13:00",
+      "16:00",
+      "19:00",
+      "21:00"
+    ],
+    "fin_de_semana": [
+      "11:00",
+      "13:00",
+      "16:00",
+      "19:00",
+      "21:00"
+    ]
+  },
+  "dias_especiales": {
+    "2026-11-02": [
+      "18:15",
+      "19:00",
+      "20:00",
+      "21:00",
+      "22:00"
+    ]
+  },
+  "reprogramar": "2026-11-02-5diarios",
+  "max_pendientes": 10,
+  "cola": [
+    {
+      "video": "jeans.mp4",
+      "texto": "¿Para qué sirve este bolsillo chiquito de tus jeans? 👖\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "pluma.mp4",
+      "texto": "Este hoyito en la tapa de tu pluma puede salvar una vida 🖊️ ¿Sabías para qué era?\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "ventanas-avion.mp4",
+      "texto": "¿Por qué las ventanas del avión nunca son cuadradas? ✈️ La respuesta viene de dos accidentes en 1954.\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "palomitas.mp4",
+      "texto": "¿Por qué revientan las palomitas? Cada palomita es una mini olla exprés 🍿\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "hielo.mp4",
+      "texto": "¿Por qué flota el hielo? El hielo flota porque es un panal con huecos 🧊\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "mar.mp4",
+      "texto": "¿Por qué el mar es salado? El mar es salado porque el sol no se lleva la sal 🌊\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "chile.mp4",
+      "texto": "¿Por qué pica el chile? El chile no quema: te engaña 🌶️🔥\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "cebolla.mp4",
+      "texto": "¿Por qué la cebolla te hace llorar? 🧅 Es una pelea química.\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "semaforo.mp4",
+      "texto": "¿Por qué el rojo del semáforo siempre está arriba? 🚦\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "qwerty.mp4",
+      "texto": "¿Por qué el teclado está desordenado? Las letras de tu teclado están desordenadas a propósito ⌨️\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "cielo.mp4",
+      "texto": "Si la luz del sol es blanca, ¿por qué el cielo es azul? ☀️\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "dedos.mp4",
+      "texto": "¿Por qué se arrugan los dedos en el agua? Tus dedos no se arrugan por el agua… se arrugan a propósito 🖐️\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "ok.mp4",
+      "texto": "¿De dónde viene el OK? La palabra OK empezó como un chiste de periódico 📰\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "hoyito-ventana.mp4",
+      "texto": "¿Para qué es el hoyito en la ventana del avión? Ese hoyito de la ventana del avión tiene un trabajo serio ✈️\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "burbujas.mp4",
+      "texto": "¿Por qué las burbujas son redondas? Las burbujas son redondas por pura tacañería 🫧\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "luna.mp4",
+      "texto": "¿Por qué la Luna siempre da la misma cara? La Luna sí gira, pero a nuestro ritmo 🌕\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "microondas.mp4",
+      "texto": "¿Cómo se inventó el microondas? El microondas nació de un chocolate derretido 🍫📡\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "trueno.mp4",
+      "texto": "¿Por qué el trueno llega después del rayo? El trueno no llega tarde: el sonido es lento ⚡\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "estelas.mp4",
+      "texto": "¿Por qué los aviones dejan rayas blancas? Esa raya blanca es una nube de hielo ✈️❄️\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "piel-gallina.mp4",
+      "texto": "¿Por qué se nos pone la piel de gallina? La piel de gallina tiene un trabajo secreto 🐔\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "ojos-rojos.mp4",
+      "texto": "¿Por qué salen los ojos rojos en las fotos? Los ojos rojos son tu retina saludando 📸\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "video": "arcoiris.mp4",
+      "texto": "¿Por qué el arcoíris es curvo? El arcoíris en realidad es un círculo 🌈\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    }
+  ]
+}
