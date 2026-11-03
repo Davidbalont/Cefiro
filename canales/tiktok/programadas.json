@@ -60,79 +60,16 @@
     "archivo": "semaforo.mp4"
   },
   {
-    "video": "qwerty.mp4",
-    "dueAt": "2026-11-04T03:00:00.000Z",
-    "cdmx": "Tue 03 Nov 21:00",
-    "buffer_id": "6ae9773b6896a4441f630412",
-    "archivo": "qwerty-h.mp4"
-  },
-  {
     "video": "jeans-2",
     "dueAt": "2026-11-03T01:10:14.000Z",
     "cdmx": "Mon 02 Nov 19:10",
     "buffer_id": "6ae9330f7996caf141c207f7"
   },
   {
-    "video": "cielo.mp4",
-    "dueAt": "2026-11-04T17:00:00.000Z",
-    "cdmx": "Wed 04 Nov 11:00",
-    "buffer_id": "6ae9773e6896a4441f630509",
-    "archivo": "cielo-h.mp4"
-  },
-  {
-    "video": "dedos.mp4",
-    "dueAt": "2026-11-03T17:00:00.000Z",
-    "cdmx": "Tue 03 Nov 11:00",
-    "buffer_id": "6ae97741e5f645e4e32d908b",
-    "archivo": "dedos-h.mp4"
-  },
-  {
-    "video": "ok.mp4",
-    "dueAt": "2026-11-03T19:00:00.000Z",
-    "cdmx": "Tue 03 Nov 13:00",
-    "buffer_id": "6ae9774364e1ad8ea2e80cc8",
-    "archivo": "ok-h.mp4"
-  },
-  {
-    "video": "hoyito-ventana.mp4",
-    "dueAt": "2026-11-03T22:00:00.000Z",
-    "cdmx": "Tue 03 Nov 16:00",
-    "buffer_id": "6ae977456896a4441f63066b",
-    "archivo": "hoyito-ventana-h.mp4"
-  },
-  {
     "video": "noticia-sep-celulares",
     "dueAt": "2026-11-03T03:10:53.000Z",
     "cdmx": "Mon 02 Nov 21:10",
     "buffer_id": "6ae94f5894b13c6dd7903911"
-  },
-  {
-    "video": "burbujas.mp4",
-    "dueAt": "2026-11-04T01:00:00.000Z",
-    "cdmx": "Tue 03 Nov 19:00",
-    "buffer_id": "6ae97748c6212bc0ea3034a7",
-    "archivo": "burbujas-h.mp4"
-  },
-  {
-    "video": "luna.mp4",
-    "dueAt": "2026-11-04T19:00:00.000Z",
-    "cdmx": "Wed 04 Nov 13:00",
-    "buffer_id": "6ae9774ac6212bc0ea303514",
-    "archivo": "luna-h.mp4"
-  },
-  {
-    "video": "microondas.mp4",
-    "dueAt": "2026-11-04T22:00:00.000Z",
-    "cdmx": "Wed 04 Nov 16:00",
-    "buffer_id": "6ae9774ce5f645e4e32d9230",
-    "archivo": "microondas-h.mp4"
-  },
-  {
-    "video": "trueno.mp4",
-    "dueAt": "2026-11-05T01:00:00.000Z",
-    "cdmx": "Wed 04 Nov 19:00",
-    "buffer_id": "6ae9ffa4b75704f9ac5e8366",
-    "archivo": "trueno-v2-h.mp4"
   },
   {
     "video": "noticia-sep-celulares-2",
@@ -148,8 +85,62 @@
   },
   {
     "video": "cebolla-h",
-    "dueAt": "2026-11-05T03:00:00.000Z",
-    "cdmx": "Wed 04 Nov 21:00",
-    "buffer_id": "6ae9ffa601362e3aaea176ca"
+    "dueAt": "2026-11-05T19:00:00.000Z",
+    "cdmx": "Thu 05 Nov 13:00",
+    "buffer_id": "6aea0e0a5a8533248e742351"
+  },
+  {
+    "video": "semaforo-h",
+    "dueAt": "2026-11-06T01:00:00.000Z",
+    "cdmx": "Thu 05 Nov 19:00",
+    "buffer_id": "6aea0e0deeb551286873863e"
+  },
+  {
+    "video": "qwerty.mp4",
+    "dueAt": "2026-11-06T19:00:00.000Z",
+    "cdmx": "Fri 06 Nov 13:00",
+    "buffer_id": "6aea0e0e01362e3aaea66705"
+  },
+  {
+    "video": "cielo.mp4",
+    "dueAt": "2026-11-07T01:00:00.000Z",
+    "cdmx": "Fri 06 Nov 19:00",
+    "buffer_id": "6aea0e0fce22073f337dffae"
+  },
+  {
+    "video": "dedos.mp4",
+    "dueAt": "2026-11-07T19:00:00.000Z",
+    "cdmx": "Sat 07 Nov 13:00",
+    "buffer_id": "6aea0e105a8533248e742517"
+  },
+  {
+    "video": "ok.mp4",
+    "dueAt": "2026-11-08T01:00:00.000Z",
+    "cdmx": "Sat 07 Nov 19:00",
+    "buffer_id": "6aea0e11b75704f9ac63c605"
+  },
+  {
+    "video": "hoyito-ventana.mp4",
+    "dueAt": "2026-11-08T19:00:00.000Z",
+    "cdmx": "Sun 08 Nov 13:00",
+    "buffer_id": "6aea0e12985f73e5825afad8"
+  },
+  {
+    "video": "burbujas.mp4",
+    "dueAt": "2026-11-09T01:00:00.000Z",
+    "cdmx": "Sun 08 Nov 19:00",
+    "buffer_id": "6aea0e13eeb5512868738992"
+  },
+  {
+    "video": "luna.mp4",
+    "dueAt": "2026-11-09T19:00:00.000Z",
+    "cdmx": "Mon 09 Nov 13:00",
+    "buffer_id": "6aea0e14eeb5512868738a0e"
+  },
+  {
+    "video": "microondas.mp4",
+    "dueAt": "2026-11-10T01:00:00.000Z",
+    "cdmx": "Mon 09 Nov 19:00",
+    "buffer_id": "6aea0e16ce22073f337e0075"
   }
 ]
