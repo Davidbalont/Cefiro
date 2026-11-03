@@ -52,11 +52,6 @@
       "texto": "¿Por qué la SEP prohíbe los celulares en las escuelas desde hoy? 📵 Esto dice la ciencia sobre la atención, qué pasó en otros países y cuáles son las excepciones. ¿Tú qué opinas: sí o no? 👇\n\nHecho con apoyo de IA.\n\n#SEP #celulares #escuelas #noticias #yesoporque"
     },
     {
-      "id": "cebolla-h",
-      "video": "cebolla-h.mp4",
-      "texto": "¿Por qué la cebolla te hace llorar? 🧅 Es una pelea química.\n\nHecho con apoyo de IA.\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
-    },
-    {
       "id": "semaforo-h",
       "video": "semaforo-h.mp4",
       "texto": "¿Por qué el rojo del semáforo siempre está arriba? 🚦\n\nHecho con apoyo de IA.\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
@@ -183,7 +178,7 @@
     }
   ],
   "quitar": {
-    "token": "2026-11-03-libera-frente-frio",
+    "token": "2026-11-03-cebolla-manual",
     "videos": [
       "cebolla-h"
     ]
