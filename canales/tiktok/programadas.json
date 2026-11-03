@@ -135,10 +135,9 @@
     "archivo": "trueno-v2.mp4"
   },
   {
-    "video": "estelas.mp4",
-    "dueAt": "2026-11-05T03:00:00.000Z",
-    "cdmx": "Wed 04 Nov 21:00",
-    "buffer_id": "6ae980093b00665c737aa84e",
-    "archivo": "estelas-v2.mp4"
+    "video": "noticia-sep-celulares-2",
+    "dueAt": "2026-11-03T13:07:10.000Z",
+    "cdmx": "Tue 03 Nov 07:07",
+    "buffer_id": "6ae9db1a647691113d4e5038"
   }
 ]
