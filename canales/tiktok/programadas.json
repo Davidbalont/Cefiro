@@ -85,62 +85,62 @@
   },
   {
     "video": "semaforo-h",
-    "dueAt": "2026-11-04T01:00:00.000Z",
-    "cdmx": "Tue 03 Nov 19:00",
-    "buffer_id": "6aea6ea816e63068f1809a9d"
+    "dueAt": "2026-11-04T03:00:00.000Z",
+    "cdmx": "Tue 03 Nov 21:00",
+    "buffer_id": "6aea6f184c41ba80aa466f88"
   },
   {
     "video": "qwerty.mp4",
-    "dueAt": "2026-11-04T19:00:00.000Z",
-    "cdmx": "Wed 04 Nov 13:00",
-    "buffer_id": "6aea6ea9b8d162e0d8f06fb6"
+    "dueAt": "2026-11-04T15:00:00.000Z",
+    "cdmx": "Wed 04 Nov 09:00",
+    "buffer_id": "6aea6f194c41ba80aa467008"
   },
   {
     "video": "cielo.mp4",
-    "dueAt": "2026-11-05T01:00:00.000Z",
-    "cdmx": "Wed 04 Nov 19:00",
-    "buffer_id": "6aea6eab16e63068f1809b6f"
+    "dueAt": "2026-11-04T17:00:00.000Z",
+    "cdmx": "Wed 04 Nov 11:00",
+    "buffer_id": "6aea6f1a87b7c6d24c7b6d5b"
   },
   {
     "video": "dedos.mp4",
-    "dueAt": "2026-11-05T19:00:00.000Z",
-    "cdmx": "Thu 05 Nov 13:00",
-    "buffer_id": "6aea6eacff887f055cd7e93c"
+    "dueAt": "2026-11-04T19:00:00.000Z",
+    "cdmx": "Wed 04 Nov 13:00",
+    "buffer_id": "6aea6f1b69ad1ef03b65d4e8"
   },
   {
     "video": "ok.mp4",
-    "dueAt": "2026-11-06T01:00:00.000Z",
-    "cdmx": "Thu 05 Nov 19:00",
-    "buffer_id": "6aea6eadb8d162e0d8f07093"
+    "dueAt": "2026-11-04T21:00:00.000Z",
+    "cdmx": "Wed 04 Nov 15:00",
+    "buffer_id": "6aea6f1c16e63068f180c170"
   },
   {
     "video": "hoyito-ventana.mp4",
-    "dueAt": "2026-11-06T19:00:00.000Z",
-    "cdmx": "Fri 06 Nov 13:00",
-    "buffer_id": "6aea6eafb8d162e0d8f070ee"
+    "dueAt": "2026-11-05T00:00:00.000Z",
+    "cdmx": "Wed 04 Nov 18:00",
+    "buffer_id": "6aea6f1db8d162e0d8f09799"
   },
   {
     "video": "burbujas.mp4",
-    "dueAt": "2026-11-07T01:00:00.000Z",
-    "cdmx": "Fri 06 Nov 19:00",
-    "buffer_id": "6aea6eb069ad1ef03b65ad50"
+    "dueAt": "2026-11-05T03:00:00.000Z",
+    "cdmx": "Wed 04 Nov 21:00",
+    "buffer_id": "6aea6f1e16e63068f180c22a"
   },
   {
     "video": "luna.mp4",
-    "dueAt": "2026-11-07T19:00:00.000Z",
-    "cdmx": "Sat 07 Nov 13:00",
-    "buffer_id": "6aea6eb14c41ba80aa464f1a"
+    "dueAt": "2026-11-05T15:00:00.000Z",
+    "cdmx": "Thu 05 Nov 09:00",
+    "buffer_id": "6aea6f1f4c41ba80aa467149"
   },
   {
     "video": "microondas.mp4",
-    "dueAt": "2026-11-08T01:00:00.000Z",
-    "cdmx": "Sat 07 Nov 19:00",
-    "buffer_id": "6aea6eb287b7c6d24c7b460a"
+    "dueAt": "2026-11-05T17:00:00.000Z",
+    "cdmx": "Thu 05 Nov 11:00",
+    "buffer_id": "6aea6f2016e63068f180c2c7"
   },
   {
     "video": "trueno.mp4",
-    "dueAt": "2026-11-08T19:00:00.000Z",
-    "cdmx": "Sun 08 Nov 13:00",
-    "buffer_id": "6aea6eb3ff887f055cd7ed29"
+    "dueAt": "2026-11-05T19:00:00.000Z",
+    "cdmx": "Thu 05 Nov 13:00",
+    "buffer_id": "6aea6f2169ad1ef03b65d693"
   }
 ]
