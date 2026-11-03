@@ -29,7 +29,13 @@
       "semaforo.mp4"
     ]
   },
-  "reemplazos": {},
+  "reemplazos": {
+    "trueno.mp4": "trueno-v2.mp4",
+    "estelas.mp4": "estelas-v2.mp4",
+    "piel-gallina.mp4": "piel-gallina-v2.mp4",
+    "ojos-rojos.mp4": "ojos-rojos-v2.mp4",
+    "arcoiris.mp4": "arcoiris-v2.mp4"
+  },
   "cola": [
     {
       "video": "jeans.mp4",
