@@ -125,6 +125,7 @@ def main():
         tok_path.write_text(token)
     reemp = cfg.get("reemplazos", {})
     textos = {c.get("id", c["video"]): c["texto"] for c in cfg["cola"]}
+    archivos = {c.get("id", c["video"]): c["video"] for c in cfg["cola"]}
     rel_r = None
 
     def recrear(r, archivo, due):
@@ -153,7 +154,7 @@ def main():
             due0 = datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00"))
             if r["video"] in adel.get("videos", []) and due0 > ahora + timedelta(minutes=8):
                 due = (ahora + timedelta(minutes=6 + 5 * k)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
-                if recrear(r, r.get("archivo") or reemp.get(r["video"], r["video"]), due):
+                if recrear(r, r.get("archivo") or reemp.get(r["video"], archivos.get(r["video"], r["video"])), due):
                     print(f"⏩ {r['video']} → {r['cdmx']}")
                     k += 1
         tok_a.write_text(adel["token"])
