@@ -1,23 +1,17 @@
 {
   "horarios": {
     "entre_semana": [
-      "11:00",
       "13:00",
-      "16:00",
-      "19:00",
-      "21:00"
+      "19:00"
     ],
     "fin_de_semana": [
-      "11:00",
       "13:00",
-      "16:00",
-      "19:00",
-      "21:00"
+      "19:00"
     ]
   },
-  "reprogramar": "2026-11-02-5diarios",
+  "reprogramar": "2026-11-03-pausa-48h",
   "max_pendientes": 10,
-  "desde": "2026-11-03T00:00:00",
+  "desde": "2026-11-05T11:00:00",
   "adelantar": {
     "token": "2026-11-02-publicos-yt",
     "videos": [
