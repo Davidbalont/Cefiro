@@ -91,6 +91,22 @@ def main():
     canal = tk[0]["id"]
     if SOLO_VER:
         return
+    if e.get("ESTADO") == "1":
+        tipos = gql('{ __type(name: "Post") { fields { name type { kind name ofType { kind name } } } } }')["__type"]["fields"]
+        print("Campos de Post:", [f["name"] for f in tipos])
+        quiero = [f["name"] for f in tipos if f["name"] in ("id", "status", "dueAt", "sentAt", "externalLink", "error", "isCustomScheduled")]
+        sub = {"error": "error { message }"}
+        campos = " ".join(sub.get(n, n) for n in quiero)
+        ahora = datetime.now(timezone.utc)
+        for r in reg:
+            due = datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00"))
+            if due > ahora - timedelta(hours=8):
+                try:
+                    d = gql(f'query($i: PostInput!) {{ post(input: $i) {{ {campos} }} }}', {"i": {"id": r["buffer_id"]}})
+                except SystemExit as err:
+                    d = str(err)
+                print(r["video"], r["cdmx"], "→", d)
+        return
 
     ahora = datetime.now(timezone.utc)
     # Reprogramar: si cola.json trae un token nuevo, borra en Buffer lo pendiente y lo vuelve a acomodar.
