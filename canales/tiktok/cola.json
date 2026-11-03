@@ -46,6 +46,12 @@
   },
   "cola": [
     {
+      "id": "noticia-frente-frio",
+      "video": "noticia-frente-frio.mp4",
+      "cuando": "ya",
+      "texto": "Llegó el frente frío 4 y México amaneció con hasta 45 grados de diferencia el mismo día. Así funciona un frente frío y por qué la altura lo cambia todo. ¿En tu ciudad hace frío o calor hoy? 🥶🥵\n\nFuente: Servicio Meteorológico Nacional, pronóstico del 3 de noviembre.\n\nHecho con apoyo de IA.\n\n#FrenteFrío #clima #México #heladas #sabiasque #yesoporque"
+    },
+    {
       "id": "noticia-sep-celulares-2",
       "video": "noticia-sep-celulares-2.mp4",
       "cuando": "ya",
@@ -183,9 +189,9 @@
     }
   ],
   "quitar": {
-    "token": "2026-11-03-libera-sep",
+    "token": "2026-11-03-libera-frente-frio",
     "videos": [
-      "estelas.mp4"
+      "cebolla-h"
     ]
   }
 }
