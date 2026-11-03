@@ -46,6 +46,22 @@
   },
   "cola": [
     {
+      "id": "noticia-sep-celulares-2",
+      "video": "noticia-sep-celulares-2.mp4",
+      "cuando": "ya",
+      "texto": "¿Por qué la SEP prohíbe los celulares en las escuelas desde hoy? 📵 Esto dice la ciencia sobre la atención, qué pasó en otros países y cuáles son las excepciones. ¿Tú qué opinas: sí o no? 👇\n\n#SEP #celulares #escuelas #noticias #yesoporque"
+    },
+    {
+      "id": "cebolla-h",
+      "video": "cebolla-h.mp4",
+      "texto": "¿Por qué la cebolla te hace llorar? 🧅 Es una pelea química.\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
+      "id": "semaforo-h",
+      "video": "semaforo-h.mp4",
+      "texto": "¿Por qué el rojo del semáforo siempre está arriba? 🚦\n\n¿Qué explicamos después? 👇\n\n#datoscuriosos #sabiasque #curiosidades #ciencia #yesoporque"
+    },
+    {
       "id": "noticia-sep-celulares",
       "video": "noticia-sep-celulares.mp4",
       "cuando": "ya",
@@ -165,5 +181,11 @@
       "video": "lana-farmacias.mp4",
       "texto": "¿Por qué casi todas las farmacias tienen un doctor al lado? 💊\n\nFuente: Acuerdo de la Secretaría de Salud sobre venta de antibióticos, DOF 27 de mayo de 2010; Grupo Animal, “Consultorios de farmacia crecen 38 % en 10 años” (2023, con datos de Anafarmex y Ensanut).\n\n¿Qué explicamos después? 👇\n\n#negocios #emprendimiento #finanzas #mexico #lalanadetras #sabiasque #yesoporque"
     }
-  ]
+  ],
+  "quitar": {
+    "token": "2026-11-03-libera-sep",
+    "videos": [
+      "estelas.mp4"
+    ]
+  }
 }
