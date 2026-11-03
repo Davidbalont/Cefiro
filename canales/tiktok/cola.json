@@ -9,9 +9,9 @@
       "19:00"
     ]
   },
-  "reprogramar": "2026-11-03-pausa-48h",
+  "reprogramar": "2026-11-03-reanudar",
   "max_pendientes": 10,
-  "desde": "2026-11-05T11:00:00",
+  "desde": "2026-11-03T18:00:00",
   "adelantar": {
     "token": "2026-11-02-publicos-yt",
     "videos": [
