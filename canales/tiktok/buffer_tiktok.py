@@ -123,12 +123,61 @@ def main():
         reg = quedan
         reg_path.write_text(json.dumps(reg, ensure_ascii=False, indent=2))
         tok_path.write_text(token)
+    reemp = cfg.get("reemplazos", {})
+    textos = {c.get("id", c["video"]): c["texto"] for c in cfg["cola"]}
+    rel_r = None
+
+    def recrear(r, archivo, due):
+        nonlocal rel_r
+        rel_r = rel_r or release()
+        url = url_publica(rel_r, archivo)
+        gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { __typename } }", {"i": {"id": r["buffer_id"]}})
+        res = gql("""mutation($i: CreatePostInput!) { createPost(input: $i) {
+                 ... on PostActionSuccess { post { id dueAt } } ... on MutationError { message } } }""",
+                {"i": {"text": textos.get(r["video"], ""), "channelId": canal, "schedulingType": "automatic", "mode": "customScheduled",
+                       "dueAt": due, "assets": [{"video": {"url": url, "metadata": {"thumbnailOffset": 1000}}}]}})["createPost"]
+        if "post" not in res:
+            print(f"✗ {r['video']}: {res.get('message')}")
+            return False
+        r["buffer_id"], r["archivo"], r["dueAt"] = res["post"]["id"], archivo, due
+        r["cdmx"] = datetime.fromisoformat(due.replace("Z", "+00:00")).astimezone(CDMX).strftime("%a %d %b %H:%M")
+        reg_path.write_text(json.dumps(reg, ensure_ascii=False, indent=2))
+        return True
+
+    # Adelantar: publica ya (escalonado cada 5 min) los videos pendientes de esta lista.
+    adel = cfg.get("adelantar", {})
+    tok_a = AQUI / "adelantado.txt"
+    if adel.get("token") and (not tok_a.exists() or tok_a.read_text().strip() != adel["token"]):
+        k = 0
+        for r in reg:
+            due0 = datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00"))
+            if r["video"] in adel.get("videos", []) and due0 > ahora + timedelta(minutes=8):
+                due = (ahora + timedelta(minutes=6 + 5 * k)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+                if recrear(r, r.get("archivo") or reemp.get(r["video"], r["video"]), due):
+                    print(f"⏩ {r['video']} → {r['cdmx']}")
+                    k += 1
+        tok_a.write_text(adel["token"])
+
+    # Reemplazos: versión corregida de un video ya programado, en el mismo horario.
+    for r in reg:
+        nuevo = reemp.get(r["video"])
+        due0 = datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00"))
+        if not nuevo or r.get("archivo") == nuevo or due0 < ahora + timedelta(minutes=5):
+            continue
+        if not (AQUI / "videos" / nuevo).exists():
+            print(f"… {nuevo} aún no está en videos/")
+            continue
+        if recrear(r, nuevo, r["dueAt"]):
+            print(f"⇄ {r['video']} → {nuevo} ({r['cdmx']})")
+
     hechos = {r["video"] for r in reg}
     pendientes = [r for r in reg if datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) > ahora]
     libres = cfg["max_pendientes"] - len(pendientes)
     ocupados = {r["dueAt"] for r in reg}
-    ultimo = max([datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) for r in pendientes], default=ahora + timedelta(minutes=5))
-    gen = horarios(cfg["horarios"], max(ultimo, ahora + timedelta(minutes=5)), cfg.get("dias_especiales"))
+    inicio = ahora + timedelta(minutes=5)
+    if cfg.get("desde"):
+        inicio = max(inicio, datetime.fromisoformat(cfg["desde"]).replace(tzinfo=CDMX))
+    gen = horarios(cfg["horarios"], inicio, cfg.get("dias_especiales"))
     clave = lambda c: c.get("id", c["video"])
     por_hacer = [c for c in cfg["cola"] if clave(c) not in hechos]
     por_hacer = sorted(por_hacer, key=lambda c: c.get("cuando") != "ya")[:max(libres, 0)]
@@ -137,11 +186,17 @@ def main():
         return
     rel = release()
     for c in por_hacer:
-        t = (ahora + timedelta(minutes=6)).astimezone(CDMX) if c.get("cuando") == "ya" else next(gen)
-        due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
-        if due in ocupados:
-            t = next(gen); due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
-        url = url_publica(rel, c["video"])
+        if c.get("cuando") == "ya":
+            t = (ahora + timedelta(minutes=6)).astimezone(CDMX)
+            due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        else:
+            while True:
+                t = next(gen)
+                due = t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+                if due not in ocupados:
+                    break
+        ocupados.add(due)
+        url = url_publica(rel, reemp.get(clave(c), c["video"]))
         r = gql("""mutation($i: CreatePostInput!) { createPost(input: $i) {
                  ... on PostActionSuccess { post { id dueAt } } ... on MutationError { message } } }""",
                 {"i": {"text": c["texto"], "channelId": canal, "schedulingType": "automatic", "mode": "customScheduled",

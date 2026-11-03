@@ -15,17 +15,21 @@
       "21:00"
     ]
   },
-  "dias_especiales": {
-    "2026-11-02": [
-      "18:15",
-      "19:00",
-      "20:00",
-      "21:00",
-      "22:00"
-    ]
-  },
   "reprogramar": "2026-11-02-5diarios",
   "max_pendientes": 10,
+  "desde": "2026-11-03T00:00:00",
+  "adelantar": {
+    "token": "2026-11-02-publicos-yt",
+    "videos": [
+      "palomitas.mp4",
+      "hielo.mp4",
+      "mar.mp4",
+      "chile.mp4",
+      "cebolla.mp4",
+      "semaforo.mp4"
+    ]
+  },
+  "reemplazos": {},
   "cola": [
     {
       "video": "jeans.mp4",
