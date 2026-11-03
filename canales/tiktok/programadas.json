@@ -131,8 +131,8 @@
     "video": "trueno.mp4",
     "dueAt": "2026-11-05T01:00:00.000Z",
     "cdmx": "Wed 04 Nov 19:00",
-    "buffer_id": "6ae9774ee5f645e4e32d92b2",
-    "archivo": "trueno-v2.mp4"
+    "buffer_id": "6ae9ffa4b75704f9ac5e8366",
+    "archivo": "trueno-v2-h.mp4"
   },
   {
     "video": "noticia-sep-celulares-2",
@@ -145,5 +145,11 @@
     "dueAt": "2026-11-03T15:10:53.000Z",
     "cdmx": "Tue 03 Nov 09:10",
     "buffer_id": "6ae9f81801362e3aae9ec132"
+  },
+  {
+    "video": "cebolla-h",
+    "dueAt": "2026-11-05T03:00:00.000Z",
+    "cdmx": "Wed 04 Nov 21:00",
+    "buffer_id": "6ae9ffa601362e3aaea176ca"
   }
 ]
