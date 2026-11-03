@@ -170,6 +170,22 @@ def main():
         if recrear(r, nuevo, r["dueAt"]):
             print(f"⇄ {r['video']} → {nuevo} ({r['cdmx']})")
 
+    # Quitar: borra de Buffer posts pendientes de esta lista y los regresa a la cola (libera lugar).
+    quitar = cfg.get("quitar", {})
+    tok_q = AQUI / "quitado.txt"
+    if quitar.get("token") and (not tok_q.exists() or tok_q.read_text().strip() != quitar["token"]):
+        quedan = []
+        for r in reg:
+            due0 = datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00"))
+            if r["video"] in quitar.get("videos", []) and due0 > ahora + timedelta(minutes=5):
+                gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { __typename } }", {"i": {"id": r["buffer_id"]}})
+                print(f"⌫ {r['video']} ({r['cdmx']}) vuelve a la cola")
+            else:
+                quedan.append(r)
+        reg[:] = quedan
+        reg_path.write_text(json.dumps(reg, ensure_ascii=False, indent=2))
+        tok_q.write_text(quitar["token"])
+
     hechos = {r["video"] for r in reg}
     pendientes = [r for r in reg if datetime.fromisoformat(r["dueAt"].replace("Z", "+00:00")) > ahora]
     libres = cfg["max_pendientes"] - len(pendientes)
