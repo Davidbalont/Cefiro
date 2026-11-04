@@ -17,8 +17,8 @@
       "21:00"
     ]
   },
-  "reprogramar": "2026-11-03-6diarios",
-  "max_pendientes": 10,
+  "reprogramar": "2026-11-03-apagar-buffer",
+  "max_pendientes": 0,
   "desde": "2026-11-03T18:00:00",
   "adelantar": {
     "token": "2026-11-03-semaforo-ya",
