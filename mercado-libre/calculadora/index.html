@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de ganancia en Mercado Libre | Céfiro Marketplace</title>
+<meta name="description" content="Calculadora gratis: cuánto te queda de cada venta en Mercado Libre después de comisión, cargo fijo, envío, costo y empaque, y a qué precio tienes que vender para ganar lo que quieres.">
+<link rel="canonical" href="https://davidbalont.github.io/Cefiro/mercado-libre/calculadora/">
+<meta property="og:title" content="¿Cuánto te queda de cada venta en Mercado Libre?">
+<meta property="og:description" content="Calculadora gratis de Céfiro Marketplace: ganancia real por venta y precio mínimo para ganar lo que quieres.">
+<meta property="og:image" content="https://davidbalont.github.io/Cefiro/logo.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="../../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--crema:#F6F3EC;--crema2:#EDE7DA;--verde:#1F3A33;--verde2:#2C5047;--oro:#B48A45;--texto:#24312D;--suave:#5E6B66;--linea:#DDD6C7;--rojo:#A3402F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:Montserrat,system-ui,sans-serif;line-height:1.6;font-size:16px}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+h1,h2{font-variant-numeric:lining-nums;font-family:'Cormorant Garamond',Georgia,serif;color:var(--verde);font-weight:700;line-height:1.1;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:var(--crema);text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--verde2)}
+.btn.sec{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+header{position:sticky;top:0;z-index:20;background:rgba(246,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{height:46px;width:auto}
+.marca span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600;border-left:1px solid var(--linea);padding-left:10px}
+nav .btn{padding:9px 18px;font-size:14px}
+@media(max-width:600px){.marca span{display:none}}
+.intro{padding:48px 0 24px}
+.intro h1{font-size:clamp(34px,5.5vw,54px);margin:12px 0 14px}
+.intro p{color:var(--suave);font-size:17px;max-width:640px;margin:0}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:16px 0 64px;align-items:start}
+@media(max-width:820px){.calc{grid-template-columns:1fr}}
+.caja{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:24px}
+.caja h2{font-size:28px;margin-bottom:14px}
+label{display:block;font-weight:600;font-size:14px;margin:14px 0 4px}
+label small{display:block;font-weight:400;color:var(--suave);font-size:13px}
+.campo{display:flex;align-items:center;border:1.5px solid var(--linea);border-radius:12px;background:var(--crema);overflow:hidden}
+.campo:focus-within{border-color:var(--oro)}
+.campo span{padding:0 12px;color:var(--suave);font-weight:600}
+.campo input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:17px;padding:11px 12px 11px 0;color:var(--texto);font-variant-numeric:tabular-nums}
+.campo input:focus{outline:none}
+.res{background:var(--verde);color:var(--crema);border-color:var(--verde)}
+.res h2{color:#E2C58E}
+.fila{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(246,243,236,.15);font-size:15px;font-variant-numeric:tabular-nums}
+.fila b{font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px}
+.total b{font-family:'Cormorant Garamond',serif;font-size:44px;line-height:1;color:#E2C58E;font-variant-numeric:lining-nums tabular-nums}
+.total b.neg{color:#F2A48F}
+.nota{font-size:13px;opacity:.85;margin:10px 0 0}
+.minimo{margin-top:20px;background:rgba(246,243,236,.08);border-radius:14px;padding:16px}
+.minimo b{font-family:'Cormorant Garamond',serif;font-size:32px;color:#fff;font-variant-numeric:lining-nums tabular-nums}
+.res .btn{background:#E2C58E;color:var(--verde);margin-top:18px}
+.ayuda{padding:0 0 64px}
+.ayuda .caja p{margin:8px 0;color:var(--suave)}
+footer{text-align:center;color:var(--suave);font-size:13px;padding:20px 16px 32px;border-top:1px solid var(--linea)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marca" href="../" aria-label="Céfiro Marketplace"><img src="../../logo.png" alt="Céfiro"><span>Mercado Libre y Amazon</span></a>
+    <nav><a class="btn" href="../#cotizar">Abrir mi tienda</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow">Calculadora gratis · Céfiro Marketplace</div>
+    <h1>¿Cuánto te queda de cada venta en Mercado Libre?</h1>
+    <p>Escribe tu precio y tus costos. Te decimos cuánto ganas de verdad después de la comisión, el cargo fijo y el envío, y a qué precio tienes que vender para ganar lo que quieres. No guardamos nada de lo que escribas.</p>
+  </div>
+</section>
+
+<div class="wrap calc">
+  <form class="caja" id="f" onsubmit="return false">
+    <h2>Tus números</h2>
+    <label for="precio">Precio de venta<small>Lo que paga el comprador, con IVA.</small></label>
+    <div class="campo"><span>$</span><input id="precio" type="number" inputmode="decimal" min="0" step="0.01" value="289"></div>
+
+    <label for="comision">Comisión por venta<small>Depende de tu categoría y del tipo de publicación (Clásica o Premium). Revísala en tu cuenta de Mercado Libre.</small></label>
+    <div class="campo"><input id="comision" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="15" style="padding-left:12px"><span>%</span></div>
+
+    <label for="fijo">Cargo fijo por unidad<small>Mercado Libre lo cobra en productos de precio bajo. Si no aplica, deja 0.</small></label>
+    <div class="campo"><span>$</span><input id="fijo" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+
+    <label for="envio">Envío que pagas tú<small>Si ofreces envío gratis o compartes el costo.</small></label>
+    <div class="campo"><span>$</span><input id="envio" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+
+    <label for="costo">Costo de tu producto<small>Lo que te cuesta fabricarlo o comprarlo.</small></label>
+    <div class="campo"><span>$</span><input id="costo" type="number" inputmode="decimal" min="0" step="0.01" value="120"></div>
+
+    <label for="empaque">Empaque y otros gastos por venta<small>Caja, bolsa, cinta, etiqueta, publicidad.</small></label>
+    <div class="campo"><span>$</span><input id="empaque" type="number" inputmode="decimal" min="0" step="0.01" value="10"></div>
+
+    <label for="meta">Ganancia que quieres<small>Como porcentaje del precio de venta.</small></label>
+    <div class="campo"><input id="meta" type="number" inputmode="decimal" min="0" max="90" step="1" value="25" style="padding-left:12px"><span>%</span></div>
+  </form>
+
+  <div class="caja res" aria-live="polite">
+    <h2>Lo que te queda</h2>
+    <div class="fila"><span>Precio de venta</span><b id="r-precio"></b></div>
+    <div class="fila"><span>Comisión de Mercado Libre</span><b id="r-comision"></b></div>
+    <div class="fila"><span>Cargo fijo</span><b id="r-fijo"></b></div>
+    <div class="fila"><span>Envío</span><b id="r-envio"></b></div>
+    <div class="fila"><span>Costo del producto</span><b id="r-costo"></b></div>
+    <div class="fila"><span>Empaque y otros</span><b id="r-empaque"></b></div>
+    <div class="total"><span>Ganancia por venta</span><b id="r-ganancia"></b></div>
+    <p class="nota" id="r-margen"></p>
+    <div class="minimo">
+      <span id="r-meta-txt"></span><br>
+      <b id="r-minimo"></b>
+      <p class="nota" id="r-minimo-nota"></p>
+    </div>
+    <p class="nota">Antes de impuestos. Mercado Libre puede retener ISR e IVA según tu situación fiscal; revísalo con tu contador.</p>
+    <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Quiero que revisen mis precios</a>
+    <p class="nota">Se abre WhatsApp con tus números. Al enviar aceptas nuestro <a href="../../aviso-de-privacidad.html" style="color:#E2C58E">aviso de privacidad</a>.</p>
+  </div>
+</div>
+
+<section class="ayuda">
+  <div class="wrap">
+    <div class="caja">
+      <h2>¿Te salió negativo o muy poco?</h2>
+      <p>Pasa más seguido de lo que parece. Tres salidas comunes: vender por paquete (2, 3 o 6 piezas) para repartir el cargo fijo y el envío, subir el precio de las versiones que ya se venden bien, o cambiar a un empaque más barato.</p>
+      <p>En Céfiro Marketplace abrimos tu tienda con 20 publicaciones, calculamos el precio de cada una así y acomodamos títulos y fotos para que te encuentren. La cuenta siempre es tuya.</p>
+      <p><a class="btn sec" href="../">Ver Céfiro Marketplace</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Céfiro Marketplace · Hecho en Sonora, México, para todo México · <a href="../">Céfiro Marketplace</a> · <a href="../../servicios-digitales/">Servicios digitales</a> · <a href="../../aviso-de-privacidad.html">Aviso de privacidad</a></footer>
+
+<script>
+const ids = ["precio","comision","fijo","envio","costo","empaque","meta"];
+const num = id => { const n = parseFloat(document.getElementById(id).value); return isFinite(n) && n > 0 ? n : 0; };
+const pesos = n => (n < 0 ? "-" : "") + "$" + Math.abs(n).toLocaleString("es-MX", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const put = (id, t) => { document.getElementById(id).textContent = t; };
+function calcular() {
+  const precio = num("precio"), c = Math.min(num("comision"), 100) / 100, fijo = num("fijo"), envio = num("envio"),
+        costo = num("costo"), empaque = num("empaque"), m = Math.min(num("meta"), 90) / 100;
+  const comision = precio * c;
+  const ganancia = precio - comision - fijo - envio - costo - empaque;
+  put("r-precio", pesos(precio));
+  const resta = n => (n > 0 ? "-" : "") + pesos(n);
+  put("r-comision", resta(comision));
+  put("r-fijo", resta(fijo));
+  put("r-envio", resta(envio));
+  put("r-costo", resta(costo));
+  put("r-empaque", resta(empaque));
+  const g = document.getElementById("r-ganancia");
+  g.textContent = pesos(ganancia);
+  g.classList.toggle("neg", ganancia < 0);
+  put("r-margen", precio > 0 ? "Eso es " + (ganancia / precio * 100).toFixed(1) + "% del precio de venta." + (ganancia < 0 ? " Con este precio pierdes dinero en cada venta." : "") : "Escribe un precio de venta.");
+  put("r-meta-txt", "Para ganar " + (m * 100).toFixed(0) + "% tendrías que vender a:");
+  const d = 1 - c - m;
+  if (d <= 0) {
+    put("r-minimo", "—");
+    put("r-minimo-nota", "La comisión más la ganancia que quieres suman 100% o más. Baja la meta.");
+  } else {
+    const minimo = (fijo + envio + costo + empaque) / d;
+    put("r-minimo", pesos(Math.ceil(minimo)));
+    put("r-minimo-nota", minimo > precio ? "Está por encima de tu precio actual." : "Tu precio actual ya alcanza esa meta.");
+  }
+  const msg = "Hola, usé la calculadora de Mercado Libre de Céfiro y quiero que revisen mis precios.\n" +
+    "Precio: " + pesos(precio) + "\nComisión: " + (c * 100) + "%\nCargo fijo: " + pesos(fijo) + "\nEnvío: " + pesos(envio) +
+    "\nCosto: " + pesos(costo) + "\nEmpaque y otros: " + pesos(empaque) + "\nGanancia por venta: " + pesos(ganancia);
+  document.getElementById("wa").href = "https://wa.me/526444624188?text=" + encodeURIComponent(msg);
+}
+ids.forEach(id => document.getElementById(id).addEventListener("input", calcular));
+calcular();
+</script>
+</body>
+</html>
